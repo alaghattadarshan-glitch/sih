@@ -1,0 +1,33 @@
+{
+  "benchmark_version": "1.0.0",
+  "timestamp_utc": "2026-09-10 14:57:59",
+  "sensor_rates": {
+    "imu_hz": 100.0,
+    "gnss_hz": 1.0
+  },
+  "imu_noise_parameters": {
+    "accel_noise_std_mps2": 0.03,
+    "gyro_noise_std_radps": 0.002,
+    "accel_bias_mps2": [
+      0.012,
+      -0.008,
+      0.015
+    ],
+    "gyro_bias_radps": [
+      0.0006,
+      -0.0004,
+      0.0008
+    ]
+  },
+  "gating_thresholds": {
+    "ai_mahalanobis": 4.0,
+    "nhc_mahalanobis": 4.0,
+    "zupt_mahalanobis": 4.0,
+    "map_mahalanobis": 4.0
+  },
+  "device_test_status": {
+    "android_physical_hardware": "NOT VERIFIED",
+    "android_log_replay": "VALIDATED",
+    "io_vnbd_status": "IO-VNBD raw data unavailable \u2014 adapter validated, benchmark execution pending."
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "dataset_name": "android_real_reference_session",
+  "overall_status": "PASS",
+  "criteria": {
+    "imu_monotonicity": {
+      "status": "PASS",
+      "value": 0,
+      "threshold": "== 0",
+      "message": "Found 0 non-monotonic IMU timestamp transitions."
+    },
+    "imu_duplicates": {
+      "status": "PASS",
+      "value": 0,
+      "threshold": "== 0",
+      "message": "Found 0 duplicate IMU timestamps."
+    },
+    "imu_sensor_gaps": {
+      "status": "PASS",
+      "value": {
+        "gaps_count": 0,
+        "max_gap_sec": 0.010000000000005116
+      },
+      "threshold": "<= 0.1 s",
+      "message": "Found 0 IMU intervals exceeding 0.1s (max: 0.0100s)."
+    },
+    "imu_nan_inf": {
+      "status": "PASS",
+      "value": 0,
+      "threshold": "== 0",
+      "message": "Found 0 NaN/Inf values across IMU channels."
+    },
+    "accel_validity": {
+      "status": "PASS",
+      "value": {
+        "mean_norm": 9.849117962481442,
+        "min_norm": 9.634689663979854,
+        "max_norm": 10.042373578050839
+      },
+      "threshold": "norm in [5.0, 25.0] m/s\u00b2",
+      "message": "Accel norm mean=9.85, min=9.63, max=10.04 m/s\u00b2."
+    },
+    "gyro_validity": {
+      "status": "PASS",
+      "value": {
+        "mean_norm": 0.013289005282620787,
+        "max_norm": 0.0621903782216948
+      },
+      "threshold": "max norm <= 15.0 rad/s",
+      "message": "Gyro norm mean=0.0133, max=0.0622 rad/s."
+    },
+    "gnss_validity": {
+      "status": "PASS",
+      "value": {
+        "sample_count": 81,
+        "invalid_lat_count": 0,
+        "invalid_lon_count": 0,
+        "invalid_acc_count": 0,
+        "mean_accuracy_m": 3.0
+      },
+      "threshold": "valid coordinates and horizontal_accuracy > 0",
+      "message": "GNSS samples: 81, mean accuracy: 3.00m."
+    },
+    "trajectory_duration": {
+      "status": "PASS",
+      "value": 80.0,
+      "threshold": ">= 5.0 s",
+      "message": "Recorded trajectory duration is 80.00 s."
+    },
+    "outage_duration": {
+      "status": "PASS",
+      "value": 60.0,
+      "threshold": ">= 5.0 s",
+      "message": "Outage duration evaluated is 60.00 s."
+    }
+  },
+  "summary": {
+    "total_criteria": 9,
+    "pass_count": 9,
+    "warn_count": 0,
+    "fail_count": 0,
+    "trajectory_duration_sec": 80.0,
+    "imu_sample_count": 8001,
+    "gnss_sample_count": 81
+  }
+}

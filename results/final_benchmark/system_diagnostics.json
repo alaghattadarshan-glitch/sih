@@ -1,0 +1,14 @@
+{
+  "filter_state_dimension": 15,
+  "error_state_definitions": [
+    "delta_pos (3)",
+    "delta_vel (3)",
+    "delta_theta (3)",
+    "delta_ba (3)",
+    "delta_bg (3)"
+  ],
+  "attitude_error_convention": "Navigation Frame (ENU), Left-multiplicative delta_q (x) q_nom",
+  "nhc_measurement_jacobian": "H_nhc = [0_{2x3}, (R_b2n^T)_{2:3,:}, [v_body x]_{2:3,:} * R_b2n^T, 0_{2x3}, 0_{2x3}]",
+  "zupt_measurement_jacobian": "H_zupt = [0_{3x3}, I_{3x3}, 0_{3x3}, 0_{3x3}, 0_{3x3}]",
+  "outage_detector_sync": "Inter-epoch gap checked against detector.max_gap_sec (100Hz ticks without GNSS fix handled without false dropouts)"
+}

@@ -1,0 +1,49 @@
+{
+  "classical_baseline": {
+    "classical_mae_east": 5.508520603179932,
+    "classical_mae_north": 1.19773268699646,
+    "classical_mae_up": 0.01305023580789566,
+    "classical_rmse_east": 7.0346269607543945,
+    "classical_rmse_north": 2.243865966796875,
+    "classical_rmse_up": 0.013401619158685207,
+    "classical_rmse_horizontal": 7.3838276863098145,
+    "classical_rmse_3d": 7.383840084075928
+  },
+  "ai_model": {
+    "ai_mae_east": 4.023250102996826,
+    "ai_mae_north": 1.5203375816345215,
+    "ai_mae_up": 0.07203321903944016,
+    "ai_rmse_east": 4.325056076049805,
+    "ai_rmse_north": 1.8390607833862305,
+    "ai_rmse_up": 0.08387194573879242,
+    "ai_rmse_horizontal": 4.699814319610596,
+    "ai_rmse_3d": 4.700562477111816
+  },
+  "horizontal_rmse_improvement_pct": 36.349891692022915,
+  "ai_outperforms_baseline": true,
+  "stratified_by_gnss_status": {
+    "OUTAGE": {
+      "count": 239,
+      "classical": {
+        "mae_east": 5.508520603179932,
+        "mae_north": 1.19773268699646,
+        "mae_up": 0.01305023580789566,
+        "rmse_east": 7.0346269607543945,
+        "rmse_north": 2.243865966796875,
+        "rmse_up": 0.013401619158685207,
+        "rmse_horizontal": 7.3838276863098145,
+        "rmse_3d": 7.383840084075928
+      },
+      "ai": {
+        "mae_east": 4.023250102996826,
+        "mae_north": 1.5203375816345215,
+        "mae_up": 0.07203321903944016,
+        "rmse_east": 4.325056076049805,
+        "rmse_north": 1.8390607833862305,
+        "rmse_up": 0.08387194573879242,
+        "rmse_horizontal": 4.699814319610596,
+        "rmse_3d": 4.700562477111816
+      }
+    }
+  }
+}

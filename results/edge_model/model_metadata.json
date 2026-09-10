@@ -1,0 +1,23 @@
+{
+  "model_name": "TCNDriftModel",
+  "version": "1.0.0",
+  "input_name": "imu_features",
+  "input_shape": [
+    1,
+    100,
+    8
+  ],
+  "output_name": "predicted_displacement",
+  "output_shape": [
+    1,
+    3
+  ],
+  "feature_dimension": 8,
+  "sequence_length": 100,
+  "sampling_rate_hz": 100.0,
+  "total_parameters": 50883,
+  "onnx_opset_version": 18,
+  "onnx_size_bytes": 32349,
+  "training_checkpoint": "best_drift_model.pt",
+  "best_val_loss": 6.965728660008898
+}

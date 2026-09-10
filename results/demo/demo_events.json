@@ -1,0 +1,34 @@
+{
+  "events": [
+    {
+      "timestamp": 0.0,
+      "wall_time": "20:43:04",
+      "type": "SYSTEM",
+      "message": "Loaded scenario 'MIXED_URBAN' with 12001 IMU samples (120s)."
+    },
+    {
+      "timestamp": 0.0,
+      "wall_time": "20:43:04",
+      "type": "CONFIG",
+      "message": "Configured Outage: 30.0s - 60.0s (30.0s duration)."
+    },
+    {
+      "timestamp": 31.51,
+      "wall_time": "20:43:05",
+      "type": "OUTAGE",
+      "message": "GNSS OUTAGE confirmed. Dead reckoning activated."
+    },
+    {
+      "timestamp": 60.99,
+      "wall_time": "20:43:06",
+      "type": "RECOVERY",
+      "message": "GNSS Signal detected. Entering RECOVERING mode."
+    },
+    {
+      "timestamp": 62.99,
+      "wall_time": "20:43:06",
+      "type": "RECOVERY",
+      "message": "GNSS lock re-acquired. Restored to GNSS_AIDED."
+    }
+  ]
+}

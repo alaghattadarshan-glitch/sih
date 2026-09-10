@@ -1,0 +1,49 @@
+{
+  "provenance": "SYNTHETIC_AND_REPLAY",
+  "sessions": [
+    {
+      "session_id": "synthetic_straight_120s",
+      "trajectory": "straight",
+      "duration_s": 120.0,
+      "e_config_outage_rmse_m": 176.79612018072083,
+      "e_config_drift_pct": 76.9227168534083
+    },
+    {
+      "session_id": "synthetic_turning_120s",
+      "trajectory": "turning",
+      "duration_s": 120.0,
+      "e_config_outage_rmse_m": 138.66497918103605,
+      "e_config_drift_pct": 78.86118583729682
+    },
+    {
+      "session_id": "synthetic_stop_and_go_120s",
+      "trajectory": "stop_and_go",
+      "duration_s": 120.0,
+      "e_config_outage_rmse_m": 41.38353708727206,
+      "e_config_drift_pct": 98.25228101174586
+    },
+    {
+      "session_id": "synthetic_accel_decel_120s",
+      "trajectory": "accel_decel",
+      "duration_s": 120.0,
+      "e_config_outage_rmse_m": 168.246809192504,
+      "e_config_drift_pct": 83.20617082063441
+    },
+    {
+      "session_id": "synthetic_mixed_urban_120s",
+      "trajectory": "mixed_urban",
+      "duration_s": 120.0,
+      "e_config_outage_rmse_m": 66.41183106558447,
+      "e_config_drift_pct": 45.402020970867035
+    },
+    {
+      "session_id": "android_real_session_001",
+      "status": "NOT VERIFIED \u2014 SOFTWARE LOG REPLAY ONLY",
+      "notes": "Real Android raw log adapter verified; physical field test validation pending."
+    },
+    {
+      "session_id": "io_vnbd_benchmark",
+      "status": "IO-VNBD raw data unavailable \u2014 adapter validated, benchmark execution pending."
+    }
+  ]
+}

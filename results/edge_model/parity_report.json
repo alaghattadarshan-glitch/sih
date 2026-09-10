@@ -1,0 +1,7 @@
+{
+  "num_windows": 100,
+  "max_absolute_difference": 1.9073486328125e-06,
+  "mae_difference": 4.956219345331192e-07,
+  "rmse_difference": 5.875361305404188e-07,
+  "parity_status": "PASS"
+}

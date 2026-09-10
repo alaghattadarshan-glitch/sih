@@ -1,0 +1,13 @@
+{
+  "scenario": "mixed_urban",
+  "duration_s": 120.0,
+  "outage_duration_s": 30.0,
+  "provenance": "SYNTHETIC_DATA",
+  "final_2d_error_m": 0.982646871338855,
+  "ins_error_m": 0.714474320159419,
+  "drift_percentage": 0.2777721820835668,
+  "sih_target_pass": true,
+  "ai_accepted": 10,
+  "nhc_accepted": 1377,
+  "zupt_accepted": 0
+}

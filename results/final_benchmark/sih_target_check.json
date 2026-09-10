@@ -1,0 +1,364 @@
+{
+  "sih_target_definition": "Dead-reckoning horizontal drift < 10% of distance traveled during outage",
+  "evaluated_configurations": [
+    "E: ESKF + AI + NHC + ZUPT",
+    "F: ESKF + AI + NHC + ZUPT + Map"
+  ],
+  "total_evaluated_cases": 50,
+  "pass_count": 3,
+  "warn_count": 4,
+  "fail_count": 43,
+  "overall_sih_compliance_pct": 6.0,
+  "evaluation_details": [
+    {
+      "scenario": "straight",
+      "outage_duration_s": 5.0,
+      "config": "E: ESKF + AI + NHC + ZUPT",
+      "drift_percentage": 10.8078039348247,
+      "status": "WARN"
+    },
+    {
+      "scenario": "straight",
+      "outage_duration_s": 5.0,
+      "config": "F: ESKF + AI + NHC + ZUPT + Map",
+      "drift_percentage": 2.1033001990105835,
+      "status": "PASS"
+    },
+    {
+      "scenario": "straight",
+      "outage_duration_s": 10.0,
+      "config": "E: ESKF + AI + NHC + ZUPT",
+      "drift_percentage": 34.38664513133162,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "straight",
+      "outage_duration_s": 10.0,
+      "config": "F: ESKF + AI + NHC + ZUPT + Map",
+      "drift_percentage": 8.245673288387465,
+      "status": "PASS"
+    },
+    {
+      "scenario": "straight",
+      "outage_duration_s": 20.0,
+      "config": "E: ESKF + AI + NHC + ZUPT",
+      "drift_percentage": 66.13272208333008,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "straight",
+      "outage_duration_s": 20.0,
+      "config": "F: ESKF + AI + NHC + ZUPT + Map",
+      "drift_percentage": 45.45963301400794,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "straight",
+      "outage_duration_s": 30.0,
+      "config": "E: ESKF + AI + NHC + ZUPT",
+      "drift_percentage": 76.9227168534083,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "straight",
+      "outage_duration_s": 30.0,
+      "config": "F: ESKF + AI + NHC + ZUPT + Map",
+      "drift_percentage": 63.11567252167538,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "straight",
+      "outage_duration_s": 60.0,
+      "config": "E: ESKF + AI + NHC + ZUPT",
+      "drift_percentage": 88.11532881547244,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "straight",
+      "outage_duration_s": 60.0,
+      "config": "F: ESKF + AI + NHC + ZUPT + Map",
+      "drift_percentage": 81.24161998688797,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "turning",
+      "outage_duration_s": 5.0,
+      "config": "E: ESKF + AI + NHC + ZUPT",
+      "drift_percentage": 51.79195617747142,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "turning",
+      "outage_duration_s": 5.0,
+      "config": "F: ESKF + AI + NHC + ZUPT + Map",
+      "drift_percentage": 51.79195617747142,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "turning",
+      "outage_duration_s": 10.0,
+      "config": "E: ESKF + AI + NHC + ZUPT",
+      "drift_percentage": 46.048498766190725,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "turning",
+      "outage_duration_s": 10.0,
+      "config": "F: ESKF + AI + NHC + ZUPT + Map",
+      "drift_percentage": 46.048498766190725,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "turning",
+      "outage_duration_s": 20.0,
+      "config": "E: ESKF + AI + NHC + ZUPT",
+      "drift_percentage": 60.716709330489074,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "turning",
+      "outage_duration_s": 20.0,
+      "config": "F: ESKF + AI + NHC + ZUPT + Map",
+      "drift_percentage": 60.716709330489074,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "turning",
+      "outage_duration_s": 30.0,
+      "config": "E: ESKF + AI + NHC + ZUPT",
+      "drift_percentage": 78.86118583729682,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "turning",
+      "outage_duration_s": 30.0,
+      "config": "F: ESKF + AI + NHC + ZUPT + Map",
+      "drift_percentage": 78.86118583729682,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "turning",
+      "outage_duration_s": 60.0,
+      "config": "E: ESKF + AI + NHC + ZUPT",
+      "drift_percentage": 79.38002658060338,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "turning",
+      "outage_duration_s": 60.0,
+      "config": "F: ESKF + AI + NHC + ZUPT + Map",
+      "drift_percentage": 79.38002658060338,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "stop_and_go",
+      "outage_duration_s": 5.0,
+      "config": "E: ESKF + AI + NHC + ZUPT",
+      "drift_percentage": 26.15891686870921,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "stop_and_go",
+      "outage_duration_s": 5.0,
+      "config": "F: ESKF + AI + NHC + ZUPT + Map",
+      "drift_percentage": 8.275042382480633,
+      "status": "PASS"
+    },
+    {
+      "scenario": "stop_and_go",
+      "outage_duration_s": 10.0,
+      "config": "E: ESKF + AI + NHC + ZUPT",
+      "drift_percentage": 42.5971585485401,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "stop_and_go",
+      "outage_duration_s": 10.0,
+      "config": "F: ESKF + AI + NHC + ZUPT + Map",
+      "drift_percentage": 26.754382702988128,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "stop_and_go",
+      "outage_duration_s": 20.0,
+      "config": "E: ESKF + AI + NHC + ZUPT",
+      "drift_percentage": 58.64024466420133,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "stop_and_go",
+      "outage_duration_s": 20.0,
+      "config": "F: ESKF + AI + NHC + ZUPT + Map",
+      "drift_percentage": 23.777071297806824,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "stop_and_go",
+      "outage_duration_s": 30.0,
+      "config": "E: ESKF + AI + NHC + ZUPT",
+      "drift_percentage": 98.25228101174586,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "stop_and_go",
+      "outage_duration_s": 30.0,
+      "config": "F: ESKF + AI + NHC + ZUPT + Map",
+      "drift_percentage": 22.264206882952223,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "stop_and_go",
+      "outage_duration_s": 60.0,
+      "config": "E: ESKF + AI + NHC + ZUPT",
+      "drift_percentage": 41.751400365270534,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "stop_and_go",
+      "outage_duration_s": 60.0,
+      "config": "F: ESKF + AI + NHC + ZUPT + Map",
+      "drift_percentage": 84.04349387278117,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "accel_decel",
+      "outage_duration_s": 5.0,
+      "config": "E: ESKF + AI + NHC + ZUPT",
+      "drift_percentage": 77.58594661242968,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "accel_decel",
+      "outage_duration_s": 5.0,
+      "config": "F: ESKF + AI + NHC + ZUPT + Map",
+      "drift_percentage": 54.990319356367536,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "accel_decel",
+      "outage_duration_s": 10.0,
+      "config": "E: ESKF + AI + NHC + ZUPT",
+      "drift_percentage": 39.60313037632959,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "accel_decel",
+      "outage_duration_s": 10.0,
+      "config": "F: ESKF + AI + NHC + ZUPT + Map",
+      "drift_percentage": 15.933232300309424,
+      "status": "WARN"
+    },
+    {
+      "scenario": "accel_decel",
+      "outage_duration_s": 20.0,
+      "config": "E: ESKF + AI + NHC + ZUPT",
+      "drift_percentage": 54.36420624401753,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "accel_decel",
+      "outage_duration_s": 20.0,
+      "config": "F: ESKF + AI + NHC + ZUPT + Map",
+      "drift_percentage": 51.274314971238056,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "accel_decel",
+      "outage_duration_s": 30.0,
+      "config": "E: ESKF + AI + NHC + ZUPT",
+      "drift_percentage": 83.20617082063441,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "accel_decel",
+      "outage_duration_s": 30.0,
+      "config": "F: ESKF + AI + NHC + ZUPT + Map",
+      "drift_percentage": 81.98303207373763,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "accel_decel",
+      "outage_duration_s": 60.0,
+      "config": "E: ESKF + AI + NHC + ZUPT",
+      "drift_percentage": 277.1676935214319,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "accel_decel",
+      "outage_duration_s": 60.0,
+      "config": "F: ESKF + AI + NHC + ZUPT + Map",
+      "drift_percentage": 285.06253175463485,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "mixed_urban",
+      "outage_duration_s": 5.0,
+      "config": "E: ESKF + AI + NHC + ZUPT",
+      "drift_percentage": 15.253943168641829,
+      "status": "WARN"
+    },
+    {
+      "scenario": "mixed_urban",
+      "outage_duration_s": 5.0,
+      "config": "F: ESKF + AI + NHC + ZUPT + Map",
+      "drift_percentage": 22.161262014625578,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "mixed_urban",
+      "outage_duration_s": 10.0,
+      "config": "E: ESKF + AI + NHC + ZUPT",
+      "drift_percentage": 17.966994622979783,
+      "status": "WARN"
+    },
+    {
+      "scenario": "mixed_urban",
+      "outage_duration_s": 10.0,
+      "config": "F: ESKF + AI + NHC + ZUPT + Map",
+      "drift_percentage": 22.767089891754146,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "mixed_urban",
+      "outage_duration_s": 20.0,
+      "config": "E: ESKF + AI + NHC + ZUPT",
+      "drift_percentage": 24.909746490061462,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "mixed_urban",
+      "outage_duration_s": 20.0,
+      "config": "F: ESKF + AI + NHC + ZUPT + Map",
+      "drift_percentage": 29.841592478480134,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "mixed_urban",
+      "outage_duration_s": 30.0,
+      "config": "E: ESKF + AI + NHC + ZUPT",
+      "drift_percentage": 45.402020970867035,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "mixed_urban",
+      "outage_duration_s": 30.0,
+      "config": "F: ESKF + AI + NHC + ZUPT + Map",
+      "drift_percentage": 48.81177098329964,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "mixed_urban",
+      "outage_duration_s": 60.0,
+      "config": "E: ESKF + AI + NHC + ZUPT",
+      "drift_percentage": 77.87491356897641,
+      "status": "FAIL"
+    },
+    {
+      "scenario": "mixed_urban",
+      "outage_duration_s": 60.0,
+      "config": "F: ESKF + AI + NHC + ZUPT + Map",
+      "drift_percentage": 79.75439342833224,
+      "status": "FAIL"
+    }
+  ]
+}

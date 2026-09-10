@@ -1,0 +1,18 @@
+{
+  "duration_sec": 60.0,
+  "total_imu_samples": 6001,
+  "mean_imu_rate_hz": 100.01666666666667,
+  "mean_dt_ms": 10.0,
+  "p95_dt_ms": 10.000000000005116,
+  "latency_mean_us": 6.483171304782536,
+  "latency_p95_us": 9.417,
+  "latency_max_us": 21.042,
+  "deadline_misses_count": 0,
+  "total_ai_inferences": 21,
+  "accepted_ai_updates": 21,
+  "rejected_ai_updates": 0,
+  "outage_start_sec": 20.0,
+  "outage_end_sec": 40.0,
+  "plots_saved": 7,
+  "harness_status": "SUCCESS"
+}

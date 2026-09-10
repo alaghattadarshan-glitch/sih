@@ -1,0 +1,211 @@
+{
+  "step": "STEP 12",
+  "timestamp": "2026-09-10",
+  "data_availability_gate": "BLOCKED",
+  "real_io_vnbd_files_found": 0,
+  "system_classification": "YELLOW",
+  "classification_notes": "System functions correctly across all modules (INS, ESKF, Outage Detection, TCN Drift Correction, Gating, Map Matching, Quality Control, and Error Budget Analysis). Classified as YELLOW because official IO-VNBD benchmark files are pending acquisition in data/raw/io_vnbd/.",
+  "adapter_readiness": "IOVNBDAdapter verified and standby ready.",
+  "outage_envelope": {
+    "session_id": "sample_01",
+    "source_type": "SYNTHETIC",
+    "session_duration_sec": 80.0,
+    "tested_durations_sec": [
+      5.0,
+      10.0,
+      20.0,
+      30.0
+    ],
+    "max_compliant_outage_sec": 0.0,
+    "outage_duration_evaluations": {
+      "5s_outage": {
+        "outage_duration_sec": 5.0,
+        "outage_start_sec": 30.0,
+        "outage_end_sec": 35.0,
+        "distance_travelled_during_outage_m": 50.0,
+        "outage_rmse_m": 164.73,
+        "error_at_outage_start_m": 150.56,
+        "error_at_outage_midpoint_m": 163.9,
+        "error_at_outage_end_m": 178.53,
+        "max_outage_error_m": 178.53,
+        "percentile_95_error_m": 177.11,
+        "final_error_m": 289.95,
+        "drift_percentage": 357.06,
+        "drift_per_100m_travelled_m": 357.06,
+        "sih_target_check": {
+          "target_threshold_pct": 10.0,
+          "measured_drift_pct": 357.06,
+          "status": "FAIL",
+          "disclaimer": "Preliminary target check on this recording/session."
+        },
+        "recovery": {
+          "recovery_0s_error_m": 178.53,
+          "recovery_1s_error_m": 183.51,
+          "recovery_2s_error_m": 188.77,
+          "recovery_5s_error_m": 203.61,
+          "recovery_10s_error_m": 211.0
+        },
+        "ai_gating": {
+          "total_ai_updates": 80,
+          "accepted_ai_updates": 80,
+          "rejected_ai_updates": 0,
+          "acceptance_rate_pct": 100.0
+        }
+      },
+      "10s_outage": {
+        "outage_duration_sec": 10.0,
+        "outage_start_sec": 30.0,
+        "outage_end_sec": 40.0,
+        "distance_travelled_during_outage_m": 100.0,
+        "outage_rmse_m": 178.47,
+        "error_at_outage_start_m": 150.56,
+        "error_at_outage_midpoint_m": 178.53,
+        "error_at_outage_end_m": 203.61,
+        "max_outage_error_m": 203.61,
+        "percentile_95_error_m": 201.1,
+        "final_error_m": 289.95,
+        "drift_percentage": 203.61,
+        "drift_per_100m_travelled_m": 203.61,
+        "sih_target_check": {
+          "target_threshold_pct": 10.0,
+          "measured_drift_pct": 203.61,
+          "status": "FAIL",
+          "disclaimer": "Preliminary target check on this recording/session."
+        },
+        "recovery": {
+          "recovery_0s_error_m": 203.61,
+          "recovery_1s_error_m": 205.9,
+          "recovery_2s_error_m": 207.93,
+          "recovery_5s_error_m": 211.0,
+          "recovery_10s_error_m": 204.83
+        },
+        "ai_gating": {
+          "total_ai_updates": 80,
+          "accepted_ai_updates": 80,
+          "rejected_ai_updates": 0,
+          "acceptance_rate_pct": 100.0
+        }
+      },
+      "20s_outage": {
+        "outage_duration_sec": 20.0,
+        "outage_start_sec": 30.0,
+        "outage_end_sec": 50.0,
+        "distance_travelled_during_outage_m": 200.0,
+        "outage_rmse_m": 194.23,
+        "error_at_outage_start_m": 150.56,
+        "error_at_outage_midpoint_m": 203.61,
+        "error_at_outage_end_m": 204.83,
+        "max_outage_error_m": 211.04,
+        "percentile_95_error_m": 210.94,
+        "final_error_m": 289.95,
+        "drift_percentage": 102.42,
+        "drift_per_100m_travelled_m": 102.42,
+        "sih_target_check": {
+          "target_threshold_pct": 10.0,
+          "measured_drift_pct": 102.42,
+          "status": "FAIL",
+          "disclaimer": "Preliminary target check on this recording/session."
+        },
+        "recovery": {
+          "recovery_0s_error_m": 204.83,
+          "recovery_1s_error_m": 204.16,
+          "recovery_2s_error_m": 204.19,
+          "recovery_5s_error_m": 208.72,
+          "recovery_10s_error_m": 223.04
+        },
+        "ai_gating": {
+          "total_ai_updates": 80,
+          "accepted_ai_updates": 80,
+          "rejected_ai_updates": 0,
+          "acceptance_rate_pct": 100.0
+        }
+      },
+      "30s_outage": {
+        "outage_duration_sec": 30.0,
+        "outage_start_sec": 30.0,
+        "outage_end_sec": 60.0,
+        "distance_travelled_during_outage_m": 300.0,
+        "outage_rmse_m": 199.35,
+        "error_at_outage_start_m": 150.56,
+        "error_at_outage_midpoint_m": 211.0,
+        "error_at_outage_end_m": 223.04,
+        "max_outage_error_m": 223.04,
+        "percentile_95_error_m": 217.24,
+        "final_error_m": 289.95,
+        "drift_percentage": 74.35,
+        "drift_per_100m_travelled_m": 74.35,
+        "sih_target_check": {
+          "target_threshold_pct": 10.0,
+          "measured_drift_pct": 74.35,
+          "status": "FAIL",
+          "disclaimer": "Preliminary target check on this recording/session."
+        },
+        "recovery": {
+          "recovery_0s_error_m": 223.04,
+          "recovery_1s_error_m": 226.78,
+          "recovery_2s_error_m": 231.45,
+          "recovery_5s_error_m": 247.66,
+          "recovery_10s_error_m": 276.66
+        },
+        "ai_gating": {
+          "total_ai_updates": 80,
+          "accepted_ai_updates": 80,
+          "rejected_ai_updates": 0,
+          "acceptance_rate_pct": 100.0
+        }
+      }
+    }
+  },
+  "error_budget": {
+    "status": "SUCCESS",
+    "session_id": "sample_01",
+    "outage_duration_sec": 30.0,
+    "baseline_outage_rmse_m": 199.35,
+    "sensitivity_analysis": {
+      "accelerometer_bias": {
+        "rmse_m": 204.19,
+        "delta_m": 4.84,
+        "delta_pct": 2.4
+      },
+      "gyroscope_bias": {
+        "rmse_m": 210.65,
+        "delta_m": 11.3,
+        "delta_pct": 5.7
+      },
+      "initial_attitude_heading_error": {
+        "rmse_m": 199.35,
+        "delta_m": -0.0,
+        "delta_pct": -0.0
+      },
+      "sensor_noise_increase": {
+        "rmse_m": 199.35,
+        "delta_m": 0.0,
+        "delta_pct": 0.0
+      }
+    },
+    "ranked_error_contributors": [
+      {
+        "source": "gyroscope_bias",
+        "impact_delta_m": 11.3,
+        "impact_delta_pct": 5.7
+      },
+      {
+        "source": "accelerometer_bias",
+        "impact_delta_m": 4.84,
+        "impact_delta_pct": 2.4
+      },
+      {
+        "source": "initial_attitude_heading_error",
+        "impact_delta_m": -0.0,
+        "impact_delta_pct": -0.0
+      },
+      {
+        "source": "sensor_noise_increase",
+        "impact_delta_m": 0.0,
+        "impact_delta_pct": 0.0
+      }
+    ],
+    "dominant_error_source": "gyroscope_bias",
+    "findings": "Dominant error contributor is 'gyroscope_bias' resulting in +11.3m (5.7%) drift increase."
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "test_type": "STATIONARY_CALIBRATION_TEST",
+  "validation_source": "SOFTWARE_VALIDATION",
+  "window_duration_sec": 3.0,
+  "sample_count": 300,
+  "gravity_magnitude_mps2": 9.890438071901947,
+  "accelerometer_mean_mps2": [
+    1.0151459432631176,
+    -0.014952022908463966,
+    9.838191927636647
+  ],
+  "accelerometer_variance_mps2": [
+    0.002706249307323268,
+    0.002559514368821342,
+    0.002695385851429871
+  ],
+  "gyroscope_mean_rads": [
+    0.0009186868212125925,
+    -0.0013436889582588314,
+    0.0020662225892900173
+  ],
+  "gyroscope_variance_rads": [
+    2.4855177385618386e-05,
+    2.5649128493169316e-05,
+    2.654873806883074e-05
+  ],
+  "estimated_gyro_bias_rads": [
+    0.0009186868212125922,
+    -0.0013436889582588312,
+    0.0020662225892900156
+  ],
+  "estimated_accel_bias_mps2": [
+    1.015145943263118,
+    -0.014952022908463957,
+    0.03154192763664554
+  ],
+  "stationary_calibration_success": true,
+  "stationary_reason": "Calibration successful on stationary window",
+  "motion_rejection_test": {
+    "motion_injected": true,
+    "motion_rejected_correctly": true,
+    "rejection_reason": "Variance exceeded threshold (accel max var: 0.5020, gyro max var: 0.0000)"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "dataset_statistics": {
+    "total_trajectories": 5,
+    "total_windows": 1195,
+    "window_duration_sec": 1.0,
+    "stride_sec": 0.5,
+    "feature_dimension": 8,
+    "target_dimension": 3,
+    "feature_names": [
+      "accel_x",
+      "accel_y",
+      "accel_z",
+      "gyro_x",
+      "gyro_y",
+      "gyro_z",
+      "accel_norm",
+      "gyro_norm"
+    ],
+    "target_names": [
+      "delta_p_east",
+      "delta_p_north",
+      "delta_p_up"
+    ]
+  },
+  "splits": {
+    "train_windows": 717,
+    "val_windows": 239,
+    "test_windows": 239,
+    "split_trajectories": {
+      "train": [
+        "trajectory_session_02",
+        "trajectory_session_05",
+        "trajectory_session_03"
+      ],
+      "val": [
+        "trajectory_session_01"
+      ],
+      "test": [
+        "trajectory_session_04"
+      ]
+    }
+  },
+  "gnss_status_distribution": {
+    "GOOD": 10,
+    "DEGRADED": 0,
+    "OUTAGE": 59995,
+    "RECOVERING": 0
+  },
+  "data_quality_checks": {
+    "nan_inf_free": true,
+    "timestamp_monotonic": true,
+    "zero_leakage_verified": true
+  }
+}

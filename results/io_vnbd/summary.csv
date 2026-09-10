@@ -1,0 +1,5 @@
+Session,Outage_Duration_s,Distance_Travelled_m,Outage_RMSE_m,Max_Error_m,Drift_Percent,SIH_Target_Status,Recovery_1s_m,Recovery_5s_m,AI_Acceptance_Rate
+sample_01,5.0,50.0,164.73,178.53,357.06,FAIL,183.51,203.61,100.0%
+sample_01,10.0,100.0,178.47,203.61,203.61,FAIL,205.9,211.0,100.0%
+sample_01,20.0,200.0,194.23,211.04,102.42,FAIL,204.16,208.72,100.0%
+sample_01,30.0,300.0,199.35,223.04,74.35,FAIL,226.78,247.66,100.0%
