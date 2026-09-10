@@ -1,0 +1,102 @@
+{
+  "dataset_name": "session_002",
+  "overall_status": "PASS",
+  "usable_overlap_interval": {
+    "start_time_sec": 0.0,
+    "end_time_sec": 120.0,
+    "duration_sec": 120.0
+  },
+  "imu_quality": {
+    "timestamp_stats": {
+      "sample_count": 12001,
+      "start_time": 0.0,
+      "end_time": 120.0,
+      "duration_sec": 120.0,
+      "sampling_rate_hz": 100.00000000000213,
+      "median_dt_sec": 0.009999999999999787,
+      "min_dt_sec": 0.009999999999990905,
+      "max_dt_sec": 0.010000000000005116,
+      "duplicate_count": 0,
+      "non_monotonic_count": 0,
+      "gaps_count": 0,
+      "gaps": [],
+      "status": "PASS"
+    },
+    "sensor_stats": {
+      "nan_inf_count": 0,
+      "accel_mean_mps2": [
+        0.02051863524589909,
+        -0.01019781224648659,
+        9.837503475799153
+      ],
+      "accel_std_mps2": [
+        0.4119100088684065,
+        0.05898835527673608,
+        0.05937752264223521
+      ],
+      "accel_norm_mean_mps2": 9.846308007064259,
+      "accel_norm_std_mps2": 0.062397498418976446,
+      "gyro_mean_rads": [
+        0.0009622549081098197,
+        -0.0009635848970452992,
+        -0.0021692645982939983
+      ],
+      "gyro_std_rads": [
+        0.005990726575541491,
+        0.005963856654141761,
+        0.01502514941627496
+      ],
+      "gyro_norm_mean_rads": 0.013036921256814219,
+      "gyro_norm_std_rads": 0.011567641482967489
+    }
+  },
+  "gnss_quality": {
+    "available": true,
+    "sample_count": 121,
+    "timestamp_stats": {
+      "sample_count": 121,
+      "start_time": 0.0,
+      "end_time": 120.0,
+      "duration_sec": 120.0,
+      "sampling_rate_hz": 1.0,
+      "median_dt_sec": 1.0,
+      "min_dt_sec": 1.0,
+      "max_dt_sec": 1.0,
+      "duplicate_count": 0,
+      "non_monotonic_count": 0,
+      "gaps_count": 0,
+      "gaps": [],
+      "status": "PASS"
+    },
+    "bounding_box": {
+      "min_latitude": 12.970264109937274,
+      "max_latitude": 12.971624268841975,
+      "min_longitude": 77.59458716817296,
+      "max_longitude": 77.60075526322615,
+      "min_altitude_m": 915.5150594385341,
+      "max_altitude_m": 924.7750808410347
+    },
+    "approx_bounding_span_north_m": 151.4121966692499,
+    "approx_bounding_span_east_m": 669.1091710562986,
+    "approx_horizontal_displacement_m": 686.0267750546291
+  },
+  "ground_truth_quality": {
+    "available": true,
+    "sample_count": 12001,
+    "timestamp_stats": {
+      "sample_count": 12001,
+      "start_time": 0.0,
+      "end_time": 120.0,
+      "duration_sec": 120.0,
+      "sampling_rate_hz": 100.00000000000213,
+      "median_dt_sec": 0.009999999999999787,
+      "min_dt_sec": 0.009999999999990905,
+      "max_dt_sec": 0.010000000000005116,
+      "duplicate_count": 0,
+      "non_monotonic_count": 0,
+      "gaps_count": 0,
+      "gaps": [],
+      "status": "PASS"
+    }
+  }
+}

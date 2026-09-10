@@ -1,0 +1,21 @@
+{
+  "calibration_enabled": true,
+  "window_start_sec": 0.0,
+  "window_duration_sec": 5.0,
+  "sample_count": 501,
+  "is_stationary": true,
+  "accel_norm_std_mps2": 0.051339539315317456,
+  "gyro_norm_std_rads": 0.003441493885045679,
+  "accel_bias_mps2": [
+    1.0179448630082653,
+    -0.012177627074497259,
+    0.027859476652068338
+  ],
+  "gyro_bias_rads": [
+    0.0011199819874899342,
+    -0.0010836530231101197,
+    0.0018530798876678482
+  ],
+  "status": "VALID",
+  "notice": "Initial calibration window verified stationary."
+}

@@ -1,0 +1,15 @@
+{
+  "dataset_name": "IO_VNBD_seq_01",
+  "adapter_class": "IOVNBDAdapter",
+  "imu_file": "data/raw/io_vnbd/seq_01/imu.csv",
+  "gnss_file": "data/raw/io_vnbd/seq_01/gnss.csv",
+  "ground_truth_file": "data/raw/io_vnbd/seq_01/ground_truth.csv",
+  "dataset_available": false,
+  "availability_notice": "IO-VNBD benchmark dataset file 'data/raw/io_vnbd/seq_01/imu.csv' is not present. Execution pending dataset archive placement.",
+  "execution_status": "PENDING_DATASET_AVAILABILITY",
+  "required_files": {
+    "imu": "data/raw/io_vnbd/seq_01/imu.csv",
+    "gnss": "data/raw/io_vnbd/seq_01/gnss.csv",
+    "ground_truth": "data/raw/io_vnbd/seq_01/ground_truth.csv"
+  }
+}

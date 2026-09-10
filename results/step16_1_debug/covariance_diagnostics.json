@@ -1,0 +1,44 @@
+{
+  "covariance_events": [
+    {
+      "timestamp": 0.0,
+      "event": "INITIALIZATION",
+      "trace": 3.0378749999999997,
+      "min_eigenvalue": 2.5e-05,
+      "max_eigenvalue": 1.0,
+      "condition_number": 40000.0,
+      "is_symmetric": true,
+      "is_positive_definite": true
+    },
+    {
+      "timestamp": 5.0,
+      "event": "PREDICT_PROPAGATION_5S",
+      "trace": 12.82394349380341,
+      "min_eigenvalue": 5.011809769605195e-06,
+      "max_eigenvalue": 5.303247061772822,
+      "condition_number": 1058150.1105518986,
+      "is_symmetric": true,
+      "is_positive_definite": true
+    },
+    {
+      "timestamp": 5.0,
+      "event": "AFTER_NHC_UPDATE",
+      "trace": 8.122682538550979,
+      "min_eigenvalue": 5.006246813974452e-06,
+      "max_eigenvalue": 5.272820044382652,
+      "condition_number": 1053248.1198617867,
+      "is_symmetric": true,
+      "is_positive_definite": true
+    },
+    {
+      "timestamp": 5.0,
+      "event": "AFTER_ZUPT_UPDATE",
+      "trace": 3.5483249210509293,
+      "min_eigenvalue": 5.006242668822133e-06,
+      "max_eigenvalue": 1.2587728384794383,
+      "condition_number": 251440.63557262634,
+      "is_symmetric": true,
+      "is_positive_definite": true
+    }
+  ]
+}

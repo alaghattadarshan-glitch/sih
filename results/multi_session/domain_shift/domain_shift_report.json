@@ -1,0 +1,9 @@
+{
+  "baseline_sample_count": 36003,
+  "target_sample_count": 20002,
+  "baseline_accel_norm_mean": 9.845579263676242,
+  "target_accel_norm_mean": 9.846191808921041,
+  "baseline_gyro_norm_mean": 0.01235155958481461,
+  "target_gyro_norm_mean": 0.012294435107086457,
+  "domain_shift_notice": "Distributions analyzed and saved to results/multi_session/domain_shift/"
+}

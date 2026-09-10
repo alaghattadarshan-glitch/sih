@@ -1,0 +1,128 @@
+{
+  "provenance": "SYNTHETIC_DATA",
+  "description": "5-way ablation metrics before vs after Step 16.1 mathematical & synchronization fixes",
+  "baseline_problematic_metrics": {
+    "A: ESKF only": {
+      "outage_rmse_m": 1007.69,
+      "final_error_m": 2035.0
+    },
+    "B: ESKF + AI": {
+      "outage_rmse_m": 5245.78,
+      "final_error_m": 10930.31
+    },
+    "C: ESKF + NHC": {
+      "outage_rmse_m": 3240.44,
+      "final_error_m": 8217.14
+    },
+    "D: ESKF + AI + NHC": {
+      "outage_rmse_m": 970.05,
+      "final_error_m": 2616.9
+    },
+    "E: ESKF + AI + NHC + ZUPT": {
+      "outage_rmse_m": 9920.9,
+      "final_error_m": 20678.08
+    }
+  },
+  "corrected_metrics": {
+    "A: ESKF only": {
+      "config_name": "A: ESKF only",
+      "enable_ai": false,
+      "enable_nhc": false,
+      "enable_zupt": false,
+      "outage_horizontal_rmse_m": 216.1461,
+      "final_horizontal_error_m": 413.6002,
+      "max_horizontal_error_m": 413.6002,
+      "distance_traveled_outage_m": 492.4,
+      "drift_percentage": 83.9976,
+      "velocity_rmse_mps": 7.0418,
+      "final_velocity_error_mps": 10.8119,
+      "mean_heading_error_deg": 105.9205,
+      "num_ai_updates": 0,
+      "ai_acceptance_rate": 0.0,
+      "num_nhc_updates": 0,
+      "nhc_acceptance_rate": 0.0,
+      "num_zupt_updates": 0,
+      "zupt_acceptance_rate": 0.0
+    },
+    "B: ESKF + AI": {
+      "config_name": "B: ESKF + AI",
+      "enable_ai": true,
+      "enable_nhc": false,
+      "enable_zupt": false,
+      "outage_horizontal_rmse_m": 560.3204,
+      "final_horizontal_error_m": 836.5268,
+      "max_horizontal_error_m": 836.5268,
+      "distance_traveled_outage_m": 492.4,
+      "drift_percentage": 169.8893,
+      "velocity_rmse_mps": 16.0139,
+      "final_velocity_error_mps": 12.1292,
+      "mean_heading_error_deg": 155.3613,
+      "num_ai_updates": 73,
+      "ai_acceptance_rate": 72.6,
+      "num_nhc_updates": 0,
+      "nhc_acceptance_rate": 0.0,
+      "num_zupt_updates": 0,
+      "zupt_acceptance_rate": 0.0
+    },
+    "C: ESKF + NHC": {
+      "config_name": "C: ESKF + NHC",
+      "enable_ai": false,
+      "enable_nhc": true,
+      "enable_zupt": false,
+      "outage_horizontal_rmse_m": 261.7423,
+      "final_horizontal_error_m": 654.9345,
+      "max_horizontal_error_m": 654.9345,
+      "distance_traveled_outage_m": 492.4,
+      "drift_percentage": 133.0099,
+      "velocity_rmse_mps": 12.1362,
+      "final_velocity_error_mps": 23.5748,
+      "mean_heading_error_deg": 95.3342,
+      "num_ai_updates": 0,
+      "ai_acceptance_rate": 0.0,
+      "num_nhc_updates": 4367,
+      "nhc_acceptance_rate": 90.68,
+      "num_zupt_updates": 0,
+      "zupt_acceptance_rate": 0.0
+    },
+    "D: ESKF + AI + NHC": {
+      "config_name": "D: ESKF + AI + NHC",
+      "enable_ai": true,
+      "enable_nhc": true,
+      "enable_zupt": false,
+      "outage_horizontal_rmse_m": 139.9774,
+      "final_horizontal_error_m": 225.2486,
+      "max_horizontal_error_m": 227.3038,
+      "distance_traveled_outage_m": 492.4,
+      "drift_percentage": 45.7455,
+      "velocity_rmse_mps": 7.2496,
+      "final_velocity_error_mps": 9.834,
+      "mean_heading_error_deg": 100.1655,
+      "num_ai_updates": 73,
+      "ai_acceptance_rate": 31.51,
+      "num_nhc_updates": 4367,
+      "nhc_acceptance_rate": 90.68,
+      "num_zupt_updates": 0,
+      "zupt_acceptance_rate": 0.0
+    },
+    "E: ESKF + AI + NHC + ZUPT": {
+      "config_name": "E: ESKF + AI + NHC + ZUPT",
+      "enable_ai": true,
+      "enable_nhc": true,
+      "enable_zupt": true,
+      "outage_horizontal_rmse_m": 116.4662,
+      "final_horizontal_error_m": 192.0093,
+      "max_horizontal_error_m": 192.0093,
+      "distance_traveled_outage_m": 492.4,
+      "drift_percentage": 38.995,
+      "velocity_rmse_mps": 5.9641,
+      "final_velocity_error_mps": 8.971,
+      "mean_heading_error_deg": 100.528,
+      "num_ai_updates": 73,
+      "ai_acceptance_rate": 35.62,
+      "num_nhc_updates": 4367,
+      "nhc_acceptance_rate": 90.68,
+      "num_zupt_updates": 2831,
+      "zupt_acceptance_rate": 0.85
+    }
+  }
+}

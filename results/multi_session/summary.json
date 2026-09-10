@@ -1,0 +1,1439 @@
+{
+  "benchmark_timestamp": "2026-09-09",
+  "total_sessions": 6,
+  "real_sessions_count": 0,
+  "synthetic_sessions_count": 6,
+  "generalization_evaluations": [
+    {
+      "session_id": "sample_01",
+      "status": "SUCCESS",
+      "num_windows": 159,
+      "ai_east_rmse_m": 4.3436,
+      "ai_north_rmse_m": 2.1322,
+      "ai_up_rmse_m": 0.0962,
+      "ai_2d_rmse_m": 4.8387,
+      "ai_3d_rmse_m": 4.8397,
+      "classical_2d_rmse_m": 9.0521,
+      "classical_3d_rmse_m": 9.0521,
+      "improvement_over_classical_pct": 46.55,
+      "bias_2d_m": [
+        -3.1891,
+        0.4976
+      ],
+      "mae_2d_m": 4.3838,
+      "percentile_95_2d_m": 6.9283
+    },
+    {
+      "session_id": "session_001",
+      "status": "SUCCESS",
+      "num_windows": 239,
+      "ai_east_rmse_m": 3.6779,
+      "ai_north_rmse_m": 1.6657,
+      "ai_up_rmse_m": 0.0855,
+      "ai_2d_rmse_m": 4.0375,
+      "ai_3d_rmse_m": 4.0384,
+      "classical_2d_rmse_m": 7.3839,
+      "classical_3d_rmse_m": 7.3839,
+      "improvement_over_classical_pct": 45.32,
+      "bias_2d_m": [
+        -0.5195,
+        0.037
+      ],
+      "mae_2d_m": 3.7274,
+      "percentile_95_2d_m": 5.8924
+    },
+    {
+      "session_id": "session_002",
+      "status": "SUCCESS",
+      "num_windows": 239,
+      "ai_east_rmse_m": 3.4791,
+      "ai_north_rmse_m": 1.62,
+      "ai_up_rmse_m": 0.0823,
+      "ai_2d_rmse_m": 3.8378,
+      "ai_3d_rmse_m": 3.8387,
+      "classical_2d_rmse_m": 7.3835,
+      "classical_3d_rmse_m": 7.3835,
+      "improvement_over_classical_pct": 48.02,
+      "bias_2d_m": [
+        -0.4461,
+        0.0808
+      ],
+      "mae_2d_m": 3.5313,
+      "percentile_95_2d_m": 5.7109
+    },
+    {
+      "session_id": "session_003",
+      "status": "SUCCESS",
+      "num_windows": 239,
+      "ai_east_rmse_m": 3.6266,
+      "ai_north_rmse_m": 1.6606,
+      "ai_up_rmse_m": 0.0835,
+      "ai_2d_rmse_m": 3.9887,
+      "ai_3d_rmse_m": 3.9896,
+      "classical_2d_rmse_m": 7.3839,
+      "classical_3d_rmse_m": 7.3839,
+      "improvement_over_classical_pct": 45.98,
+      "bias_2d_m": [
+        -0.6647,
+        0.0647
+      ],
+      "mae_2d_m": 3.6251,
+      "percentile_95_2d_m": 6.2814
+    },
+    {
+      "session_id": "session_004",
+      "status": "SUCCESS",
+      "num_windows": 239,
+      "ai_east_rmse_m": 4.3536,
+      "ai_north_rmse_m": 1.8798,
+      "ai_up_rmse_m": 0.0866,
+      "ai_2d_rmse_m": 4.7421,
+      "ai_3d_rmse_m": 4.7429,
+      "classical_2d_rmse_m": 7.3829,
+      "classical_3d_rmse_m": 7.383,
+      "improvement_over_classical_pct": 35.77,
+      "bias_2d_m": [
+        -0.6514,
+        0.1639
+      ],
+      "mae_2d_m": 4.3453,
+      "percentile_95_2d_m": 7.0685
+    },
+    {
+      "session_id": "session_005",
+      "status": "SUCCESS",
+      "num_windows": 239,
+      "ai_east_rmse_m": 4.4711,
+      "ai_north_rmse_m": 1.8662,
+      "ai_up_rmse_m": 0.0834,
+      "ai_2d_rmse_m": 4.8449,
+      "ai_3d_rmse_m": 4.8456,
+      "classical_2d_rmse_m": 7.3829,
+      "classical_3d_rmse_m": 7.3829,
+      "improvement_over_classical_pct": 34.38,
+      "bias_2d_m": [
+        -0.634,
+        -0.0209
+      ],
+      "mae_2d_m": 4.4685,
+      "percentile_95_2d_m": 7.2408
+    }
+  ],
+  "navigation_evaluations": [
+    {
+      "session_id": "sample_01",
+      "session_name": "Deterministic Sample Drive",
+      "source_type": "SYNTHETIC",
+      "duration_sec": 80.0,
+      "outage_evaluations": {
+        "10s_outage": {
+          "outage_start_sec": 30.0,
+          "outage_duration_sec": 10.0,
+          "outage_end_sec": 40.0,
+          "distance_travelled_during_outage_m": 100.0,
+          "scenarios": {
+            "Scenario_A_Normal_GNSS": {
+              "outage_rmse_m": 104.8,
+              "error_at_outage_start_m": 62.92,
+              "error_at_outage_midpoint_m": 99.66,
+              "error_at_outage_end_m": 149.14,
+              "max_outage_error_m": 149.14,
+              "percentile_95_error_m": 143.57,
+              "drift_percentage": 149.14,
+              "drift_per_100m_travelled_m": 149.14,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 149.14,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 149.14,
+                "error_at_recovery_1s_m": 160.48,
+                "error_at_recovery_2s_m": 171.95,
+                "error_at_recovery_5s_m": 207.31
+              }
+            },
+            "Scenario_B_ESKF_Outage": {
+              "outage_rmse_m": 104.8,
+              "error_at_outage_start_m": 62.92,
+              "error_at_outage_midpoint_m": 99.66,
+              "error_at_outage_end_m": 149.14,
+              "max_outage_error_m": 149.14,
+              "percentile_95_error_m": 143.57,
+              "drift_percentage": 149.14,
+              "drift_per_100m_travelled_m": 149.14,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 149.14,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 149.14,
+                "error_at_recovery_1s_m": 160.48,
+                "error_at_recovery_2s_m": 171.95,
+                "error_at_recovery_5s_m": 207.31
+              }
+            },
+            "Scenario_C_ESKF_AI": {
+              "outage_rmse_m": 178.47,
+              "error_at_outage_start_m": 150.56,
+              "error_at_outage_midpoint_m": 178.53,
+              "error_at_outage_end_m": 203.61,
+              "max_outage_error_m": 203.61,
+              "percentile_95_error_m": 201.1,
+              "drift_percentage": 203.61,
+              "drift_per_100m_travelled_m": 203.61,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 203.61,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 203.61,
+                "error_at_recovery_1s_m": 205.9,
+                "error_at_recovery_2s_m": 207.93,
+                "error_at_recovery_5s_m": 211.0
+              }
+            }
+          }
+        },
+        "30s_outage": {
+          "outage_start_sec": 30.0,
+          "outage_duration_sec": 30.0,
+          "outage_end_sec": 60.0,
+          "distance_travelled_during_outage_m": 300.0,
+          "scenarios": {
+            "Scenario_A_Normal_GNSS": {
+              "outage_rmse_m": 244.06,
+              "error_at_outage_start_m": 62.92,
+              "error_at_outage_midpoint_m": 207.31,
+              "error_at_outage_end_m": 438.18,
+              "max_outage_error_m": 438.18,
+              "percentile_95_error_m": 407.89,
+              "drift_percentage": 146.06,
+              "drift_per_100m_travelled_m": 146.06,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 146.06,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 438.18,
+                "error_at_recovery_1s_m": 459.42,
+                "error_at_recovery_2s_m": 481.53,
+                "error_at_recovery_5s_m": 553.21
+              }
+            },
+            "Scenario_B_ESKF_Outage": {
+              "outage_rmse_m": 244.06,
+              "error_at_outage_start_m": 62.92,
+              "error_at_outage_midpoint_m": 207.31,
+              "error_at_outage_end_m": 438.18,
+              "max_outage_error_m": 438.18,
+              "percentile_95_error_m": 407.89,
+              "drift_percentage": 146.06,
+              "drift_per_100m_travelled_m": 146.06,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 146.06,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 438.18,
+                "error_at_recovery_1s_m": 459.42,
+                "error_at_recovery_2s_m": 481.53,
+                "error_at_recovery_5s_m": 553.21
+              }
+            },
+            "Scenario_C_ESKF_AI": {
+              "outage_rmse_m": 199.35,
+              "error_at_outage_start_m": 150.56,
+              "error_at_outage_midpoint_m": 211.0,
+              "error_at_outage_end_m": 223.04,
+              "max_outage_error_m": 223.04,
+              "percentile_95_error_m": 217.24,
+              "drift_percentage": 74.35,
+              "drift_per_100m_travelled_m": 74.35,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 74.35,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 223.04,
+                "error_at_recovery_1s_m": 226.78,
+                "error_at_recovery_2s_m": 231.45,
+                "error_at_recovery_5s_m": 247.66
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "session_id": "session_001",
+      "session_name": "Highway Cruise & Gentle Curves",
+      "source_type": "SYNTHETIC",
+      "duration_sec": 120.0,
+      "outage_evaluations": {
+        "10s_outage": {
+          "outage_start_sec": 30.0,
+          "outage_duration_sec": 10.0,
+          "outage_end_sec": 40.0,
+          "distance_travelled_during_outage_m": 100.0,
+          "scenarios": {
+            "Scenario_A_Normal_GNSS": {
+              "outage_rmse_m": 94.69,
+              "error_at_outage_start_m": 57.25,
+              "error_at_outage_midpoint_m": 90.25,
+              "error_at_outage_end_m": 134.04,
+              "max_outage_error_m": 134.04,
+              "percentile_95_error_m": 129.13,
+              "drift_percentage": 134.04,
+              "drift_per_100m_travelled_m": 134.04,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 134.04,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 134.04,
+                "error_at_recovery_1s_m": 144.03,
+                "error_at_recovery_2s_m": 154.14,
+                "error_at_recovery_5s_m": 185.26
+              }
+            },
+            "Scenario_B_ESKF_Outage": {
+              "outage_rmse_m": 94.69,
+              "error_at_outage_start_m": 57.25,
+              "error_at_outage_midpoint_m": 90.25,
+              "error_at_outage_end_m": 134.04,
+              "max_outage_error_m": 134.04,
+              "percentile_95_error_m": 129.13,
+              "drift_percentage": 134.04,
+              "drift_per_100m_travelled_m": 134.04,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 134.04,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 134.04,
+                "error_at_recovery_1s_m": 144.03,
+                "error_at_recovery_2s_m": 154.14,
+                "error_at_recovery_5s_m": 185.26
+              }
+            },
+            "Scenario_C_ESKF_AI": {
+              "outage_rmse_m": 154.64,
+              "error_at_outage_start_m": 129.64,
+              "error_at_outage_midpoint_m": 154.76,
+              "error_at_outage_end_m": 176.3,
+              "max_outage_error_m": 176.3,
+              "percentile_95_error_m": 173.86,
+              "drift_percentage": 176.3,
+              "drift_per_100m_travelled_m": 176.3,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 176.3,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 176.3,
+                "error_at_recovery_1s_m": 178.43,
+                "error_at_recovery_2s_m": 180.07,
+                "error_at_recovery_5s_m": 181.81
+              }
+            }
+          }
+        },
+        "30s_outage": {
+          "outage_start_sec": 30.0,
+          "outage_duration_sec": 30.0,
+          "outage_end_sec": 60.0,
+          "distance_travelled_during_outage_m": 300.0,
+          "scenarios": {
+            "Scenario_A_Normal_GNSS": {
+              "outage_rmse_m": 217.15,
+              "error_at_outage_start_m": 57.25,
+              "error_at_outage_midpoint_m": 185.26,
+              "error_at_outage_end_m": 388.6,
+              "max_outage_error_m": 388.6,
+              "percentile_95_error_m": 361.71,
+              "drift_percentage": 129.53,
+              "drift_per_100m_travelled_m": 129.53,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 129.53,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 388.6,
+                "error_at_recovery_1s_m": 407.49,
+                "error_at_recovery_2s_m": 427.17,
+                "error_at_recovery_5s_m": 491.11
+              }
+            },
+            "Scenario_B_ESKF_Outage": {
+              "outage_rmse_m": 217.15,
+              "error_at_outage_start_m": 57.25,
+              "error_at_outage_midpoint_m": 185.26,
+              "error_at_outage_end_m": 388.6,
+              "max_outage_error_m": 388.6,
+              "percentile_95_error_m": 361.71,
+              "drift_percentage": 129.53,
+              "drift_per_100m_travelled_m": 129.53,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 129.53,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 388.6,
+                "error_at_recovery_1s_m": 407.49,
+                "error_at_recovery_2s_m": 427.17,
+                "error_at_recovery_5s_m": 491.11
+              }
+            },
+            "Scenario_C_ESKF_AI": {
+              "outage_rmse_m": 170.96,
+              "error_at_outage_start_m": 129.64,
+              "error_at_outage_midpoint_m": 181.81,
+              "error_at_outage_end_m": 187.11,
+              "max_outage_error_m": 187.11,
+              "percentile_95_error_m": 182.72,
+              "drift_percentage": 62.37,
+              "drift_per_100m_travelled_m": 62.37,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 62.37,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 187.11,
+                "error_at_recovery_1s_m": 189.6,
+                "error_at_recovery_2s_m": 193.57,
+                "error_at_recovery_5s_m": 205.51
+              }
+            }
+          }
+        },
+        "60s_outage": {
+          "outage_start_sec": 30.0,
+          "outage_duration_sec": 60.0,
+          "outage_end_sec": 90.0,
+          "distance_travelled_during_outage_m": 450.05,
+          "scenarios": {
+            "Scenario_A_Normal_GNSS": {
+              "outage_rmse_m": 621.84,
+              "error_at_outage_start_m": 57.25,
+              "error_at_outage_midpoint_m": 388.6,
+              "error_at_outage_end_m": 1374.85,
+              "max_outage_error_m": 1374.85,
+              "percentile_95_error_m": 1231.89,
+              "drift_percentage": 305.49,
+              "drift_per_100m_travelled_m": 305.49,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 305.49,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 1374.85,
+                "error_at_recovery_1s_m": 1424.88,
+                "error_at_recovery_2s_m": 1476.12,
+                "error_at_recovery_5s_m": 1637.22
+              }
+            },
+            "Scenario_B_ESKF_Outage": {
+              "outage_rmse_m": 621.84,
+              "error_at_outage_start_m": 57.25,
+              "error_at_outage_midpoint_m": 388.6,
+              "error_at_outage_end_m": 1374.85,
+              "max_outage_error_m": 1374.85,
+              "percentile_95_error_m": 1231.89,
+              "drift_percentage": 305.49,
+              "drift_per_100m_travelled_m": 305.49,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 305.49,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 1374.85,
+                "error_at_recovery_1s_m": 1424.88,
+                "error_at_recovery_2s_m": 1476.12,
+                "error_at_recovery_5s_m": 1637.22
+              }
+            },
+            "Scenario_C_ESKF_AI": {
+              "outage_rmse_m": 199.16,
+              "error_at_outage_start_m": 129.64,
+              "error_at_outage_midpoint_m": 187.11,
+              "error_at_outage_end_m": 201.38,
+              "max_outage_error_m": 247.5,
+              "percentile_95_error_m": 245.52,
+              "drift_percentage": 44.75,
+              "drift_per_100m_travelled_m": 44.75,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 44.75,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 201.38,
+                "error_at_recovery_1s_m": 197.02,
+                "error_at_recovery_2s_m": 193.33,
+                "error_at_recovery_5s_m": 182.04
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "session_id": "session_002",
+      "session_name": "Urban Grid & 90-deg Turns",
+      "source_type": "SYNTHETIC",
+      "duration_sec": 120.0,
+      "outage_evaluations": {
+        "10s_outage": {
+          "outage_start_sec": 30.0,
+          "outage_duration_sec": 10.0,
+          "outage_end_sec": 40.0,
+          "distance_travelled_during_outage_m": 100.0,
+          "scenarios": {
+            "Scenario_A_Normal_GNSS": {
+              "outage_rmse_m": 91.99,
+              "error_at_outage_start_m": 55.66,
+              "error_at_outage_midpoint_m": 87.7,
+              "error_at_outage_end_m": 130.13,
+              "max_outage_error_m": 130.13,
+              "percentile_95_error_m": 125.38,
+              "drift_percentage": 130.13,
+              "drift_per_100m_travelled_m": 130.13,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 130.13,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 130.13,
+                "error_at_recovery_1s_m": 139.83,
+                "error_at_recovery_2s_m": 149.66,
+                "error_at_recovery_5s_m": 180.04
+              }
+            },
+            "Scenario_B_ESKF_Outage": {
+              "outage_rmse_m": 91.99,
+              "error_at_outage_start_m": 55.66,
+              "error_at_outage_midpoint_m": 87.7,
+              "error_at_outage_end_m": 130.13,
+              "max_outage_error_m": 130.13,
+              "percentile_95_error_m": 125.38,
+              "drift_percentage": 130.13,
+              "drift_per_100m_travelled_m": 130.13,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 130.13,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 130.13,
+                "error_at_recovery_1s_m": 139.83,
+                "error_at_recovery_2s_m": 149.66,
+                "error_at_recovery_5s_m": 180.04
+              }
+            },
+            "Scenario_C_ESKF_AI": {
+              "outage_rmse_m": 140.7,
+              "error_at_outage_start_m": 118.64,
+              "error_at_outage_midpoint_m": 140.04,
+              "error_at_outage_end_m": 161.09,
+              "max_outage_error_m": 161.09,
+              "percentile_95_error_m": 158.77,
+              "drift_percentage": 161.09,
+              "drift_per_100m_travelled_m": 161.09,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 161.09,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 161.09,
+                "error_at_recovery_1s_m": 163.33,
+                "error_at_recovery_2s_m": 165.1,
+                "error_at_recovery_5s_m": 167.59
+              }
+            }
+          }
+        },
+        "30s_outage": {
+          "outage_start_sec": 30.0,
+          "outage_duration_sec": 30.0,
+          "outage_end_sec": 60.0,
+          "distance_travelled_during_outage_m": 300.0,
+          "scenarios": {
+            "Scenario_A_Normal_GNSS": {
+              "outage_rmse_m": 211.75,
+              "error_at_outage_start_m": 55.66,
+              "error_at_outage_midpoint_m": 180.04,
+              "error_at_outage_end_m": 380.36,
+              "max_outage_error_m": 380.36,
+              "percentile_95_error_m": 353.73,
+              "drift_percentage": 126.79,
+              "drift_per_100m_travelled_m": 126.79,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 126.79,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 380.36,
+                "error_at_recovery_1s_m": 399.08,
+                "error_at_recovery_2s_m": 418.58,
+                "error_at_recovery_5s_m": 481.95
+              }
+            },
+            "Scenario_B_ESKF_Outage": {
+              "outage_rmse_m": 211.75,
+              "error_at_outage_start_m": 55.66,
+              "error_at_outage_midpoint_m": 180.04,
+              "error_at_outage_end_m": 380.36,
+              "max_outage_error_m": 380.36,
+              "percentile_95_error_m": 353.73,
+              "drift_percentage": 126.79,
+              "drift_per_100m_travelled_m": 126.79,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 126.79,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 380.36,
+                "error_at_recovery_1s_m": 399.08,
+                "error_at_recovery_2s_m": 418.58,
+                "error_at_recovery_5s_m": 481.95
+              }
+            },
+            "Scenario_C_ESKF_AI": {
+              "outage_rmse_m": 157.48,
+              "error_at_outage_start_m": 118.64,
+              "error_at_outage_midpoint_m": 167.59,
+              "error_at_outage_end_m": 172.97,
+              "max_outage_error_m": 173.63,
+              "percentile_95_error_m": 170.4,
+              "drift_percentage": 57.66,
+              "drift_per_100m_travelled_m": 57.66,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 57.66,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 172.97,
+                "error_at_recovery_1s_m": 175.53,
+                "error_at_recovery_2s_m": 177.71,
+                "error_at_recovery_5s_m": 187.74
+              }
+            }
+          }
+        },
+        "60s_outage": {
+          "outage_start_sec": 30.0,
+          "outage_duration_sec": 60.0,
+          "outage_end_sec": 90.0,
+          "distance_travelled_during_outage_m": 450.05,
+          "scenarios": {
+            "Scenario_A_Normal_GNSS": {
+              "outage_rmse_m": 614.02,
+              "error_at_outage_start_m": 55.66,
+              "error_at_outage_midpoint_m": 380.36,
+              "error_at_outage_end_m": 1362.93,
+              "max_outage_error_m": 1362.93,
+              "percentile_95_error_m": 1220.36,
+              "drift_percentage": 302.84,
+              "drift_per_100m_travelled_m": 302.84,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 302.84,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 1362.93,
+                "error_at_recovery_1s_m": 1412.82,
+                "error_at_recovery_2s_m": 1463.92,
+                "error_at_recovery_5s_m": 1624.46
+              }
+            },
+            "Scenario_B_ESKF_Outage": {
+              "outage_rmse_m": 614.02,
+              "error_at_outage_start_m": 55.66,
+              "error_at_outage_midpoint_m": 380.36,
+              "error_at_outage_end_m": 1362.93,
+              "max_outage_error_m": 1362.93,
+              "percentile_95_error_m": 1220.36,
+              "drift_percentage": 302.84,
+              "drift_per_100m_travelled_m": 302.84,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 302.84,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 1362.93,
+                "error_at_recovery_1s_m": 1412.82,
+                "error_at_recovery_2s_m": 1463.92,
+                "error_at_recovery_5s_m": 1624.46
+              }
+            },
+            "Scenario_C_ESKF_AI": {
+              "outage_rmse_m": 183.93,
+              "error_at_outage_start_m": 118.64,
+              "error_at_outage_midpoint_m": 172.97,
+              "error_at_outage_end_m": 178.92,
+              "max_outage_error_m": 231.73,
+              "percentile_95_error_m": 229.2,
+              "drift_percentage": 39.75,
+              "drift_per_100m_travelled_m": 39.75,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 39.75,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 178.92,
+                "error_at_recovery_1s_m": 173.84,
+                "error_at_recovery_2s_m": 169.07,
+                "error_at_recovery_5s_m": 153.11
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "session_id": "session_003",
+      "session_name": "Stop-and-Go Traffic",
+      "source_type": "SYNTHETIC",
+      "duration_sec": 120.0,
+      "outage_evaluations": {
+        "10s_outage": {
+          "outage_start_sec": 30.0,
+          "outage_duration_sec": 10.0,
+          "outage_end_sec": 40.0,
+          "distance_travelled_during_outage_m": 100.0,
+          "scenarios": {
+            "Scenario_A_Normal_GNSS": {
+              "outage_rmse_m": 114.92,
+              "error_at_outage_start_m": 69.19,
+              "error_at_outage_midpoint_m": 109.47,
+              "error_at_outage_end_m": 162.96,
+              "max_outage_error_m": 162.96,
+              "percentile_95_error_m": 156.97,
+              "drift_percentage": 162.96,
+              "drift_per_100m_travelled_m": 162.96,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 162.96,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 162.96,
+                "error_at_recovery_1s_m": 175.21,
+                "error_at_recovery_2s_m": 187.67,
+                "error_at_recovery_5s_m": 226.37
+              }
+            },
+            "Scenario_B_ESKF_Outage": {
+              "outage_rmse_m": 114.92,
+              "error_at_outage_start_m": 69.19,
+              "error_at_outage_midpoint_m": 109.47,
+              "error_at_outage_end_m": 162.96,
+              "max_outage_error_m": 162.96,
+              "percentile_95_error_m": 156.97,
+              "drift_percentage": 162.96,
+              "drift_per_100m_travelled_m": 162.96,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 162.96,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 162.96,
+                "error_at_recovery_1s_m": 175.21,
+                "error_at_recovery_2s_m": 187.67,
+                "error_at_recovery_5s_m": 226.37
+              }
+            },
+            "Scenario_C_ESKF_AI": {
+              "outage_rmse_m": 159.05,
+              "error_at_outage_start_m": 134.43,
+              "error_at_outage_midpoint_m": 158.6,
+              "error_at_outage_end_m": 179.8,
+              "max_outage_error_m": 180.15,
+              "percentile_95_error_m": 178.38,
+              "drift_percentage": 179.8,
+              "drift_per_100m_travelled_m": 179.8,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 179.8,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 179.8,
+                "error_at_recovery_1s_m": 181.35,
+                "error_at_recovery_2s_m": 182.53,
+                "error_at_recovery_5s_m": 183.69
+              }
+            }
+          }
+        },
+        "30s_outage": {
+          "outage_start_sec": 30.0,
+          "outage_duration_sec": 30.0,
+          "outage_end_sec": 60.0,
+          "distance_travelled_during_outage_m": 300.0,
+          "scenarios": {
+            "Scenario_A_Normal_GNSS": {
+              "outage_rmse_m": 267.03,
+              "error_at_outage_start_m": 69.19,
+              "error_at_outage_midpoint_m": 226.37,
+              "error_at_outage_end_m": 478.96,
+              "max_outage_error_m": 478.96,
+              "percentile_95_error_m": 446.15,
+              "drift_percentage": 159.65,
+              "drift_per_100m_travelled_m": 159.65,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 159.65,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 478.96,
+                "error_at_recovery_1s_m": 501.92,
+                "error_at_recovery_2s_m": 525.78,
+                "error_at_recovery_5s_m": 602.88
+              }
+            },
+            "Scenario_B_ESKF_Outage": {
+              "outage_rmse_m": 267.03,
+              "error_at_outage_start_m": 69.19,
+              "error_at_outage_midpoint_m": 226.37,
+              "error_at_outage_end_m": 478.96,
+              "max_outage_error_m": 478.96,
+              "percentile_95_error_m": 446.15,
+              "drift_percentage": 159.65,
+              "drift_per_100m_travelled_m": 159.65,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 159.65,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 478.96,
+                "error_at_recovery_1s_m": 501.92,
+                "error_at_recovery_2s_m": 525.78,
+                "error_at_recovery_5s_m": 602.88
+              }
+            },
+            "Scenario_C_ESKF_AI": {
+              "outage_rmse_m": 173.39,
+              "error_at_outage_start_m": 134.43,
+              "error_at_outage_midpoint_m": 183.69,
+              "error_at_outage_end_m": 188.7,
+              "max_outage_error_m": 188.7,
+              "percentile_95_error_m": 185.04,
+              "drift_percentage": 62.9,
+              "drift_per_100m_travelled_m": 62.9,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 62.9,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 188.7,
+                "error_at_recovery_1s_m": 192.31,
+                "error_at_recovery_2s_m": 196.15,
+                "error_at_recovery_5s_m": 210.9
+              }
+            }
+          }
+        },
+        "60s_outage": {
+          "outage_start_sec": 30.0,
+          "outage_duration_sec": 60.0,
+          "outage_end_sec": 90.0,
+          "distance_travelled_during_outage_m": 450.05,
+          "scenarios": {
+            "Scenario_A_Normal_GNSS": {
+              "outage_rmse_m": 747.87,
+              "error_at_outage_start_m": 69.19,
+              "error_at_outage_midpoint_m": 478.96,
+              "error_at_outage_end_m": 1626.92,
+              "max_outage_error_m": 1626.92,
+              "percentile_95_error_m": 1464.67,
+              "drift_percentage": 361.5,
+              "drift_per_100m_travelled_m": 361.5,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 361.5,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 1626.92,
+                "error_at_recovery_1s_m": 1683.51,
+                "error_at_recovery_2s_m": 1741.38,
+                "error_at_recovery_5s_m": 1922.76
+              }
+            },
+            "Scenario_B_ESKF_Outage": {
+              "outage_rmse_m": 747.87,
+              "error_at_outage_start_m": 69.19,
+              "error_at_outage_midpoint_m": 478.96,
+              "error_at_outage_end_m": 1626.92,
+              "max_outage_error_m": 1626.92,
+              "percentile_95_error_m": 1464.67,
+              "drift_percentage": 361.5,
+              "drift_per_100m_travelled_m": 361.5,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 361.5,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 1626.92,
+                "error_at_recovery_1s_m": 1683.51,
+                "error_at_recovery_2s_m": 1741.38,
+                "error_at_recovery_5s_m": 1922.76
+              }
+            },
+            "Scenario_C_ESKF_AI": {
+              "outage_rmse_m": 202.11,
+              "error_at_outage_start_m": 134.43,
+              "error_at_outage_midpoint_m": 188.7,
+              "error_at_outage_end_m": 205.49,
+              "max_outage_error_m": 250.22,
+              "percentile_95_error_m": 248.46,
+              "drift_percentage": 45.66,
+              "drift_per_100m_travelled_m": 45.66,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 45.66,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 205.49,
+                "error_at_recovery_1s_m": 201.33,
+                "error_at_recovery_2s_m": 196.66,
+                "error_at_recovery_5s_m": 182.78
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "session_id": "session_004",
+      "session_name": "High Dynamic Slalom",
+      "source_type": "SYNTHETIC",
+      "duration_sec": 120.0,
+      "outage_evaluations": {
+        "10s_outage": {
+          "outage_start_sec": 30.0,
+          "outage_duration_sec": 10.0,
+          "outage_end_sec": 40.0,
+          "distance_travelled_during_outage_m": 100.0,
+          "scenarios": {
+            "Scenario_A_Normal_GNSS": {
+              "outage_rmse_m": 98.41,
+              "error_at_outage_start_m": 57.05,
+              "error_at_outage_midpoint_m": 93.24,
+              "error_at_outage_end_m": 141.88,
+              "max_outage_error_m": 141.88,
+              "percentile_95_error_m": 136.39,
+              "drift_percentage": 141.88,
+              "drift_per_100m_travelled_m": 141.88,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 141.88,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 141.88,
+                "error_at_recovery_1s_m": 153.18,
+                "error_at_recovery_2s_m": 164.79,
+                "error_at_recovery_5s_m": 201.44
+              }
+            },
+            "Scenario_B_ESKF_Outage": {
+              "outage_rmse_m": 98.41,
+              "error_at_outage_start_m": 57.05,
+              "error_at_outage_midpoint_m": 93.24,
+              "error_at_outage_end_m": 141.88,
+              "max_outage_error_m": 141.88,
+              "percentile_95_error_m": 136.39,
+              "drift_percentage": 141.88,
+              "drift_per_100m_travelled_m": 141.88,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 141.88,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 141.88,
+                "error_at_recovery_1s_m": 153.18,
+                "error_at_recovery_2s_m": 164.79,
+                "error_at_recovery_5s_m": 201.44
+              }
+            },
+            "Scenario_C_ESKF_AI": {
+              "outage_rmse_m": 170.29,
+              "error_at_outage_start_m": 140.21,
+              "error_at_outage_midpoint_m": 169.87,
+              "error_at_outage_end_m": 197.79,
+              "max_outage_error_m": 197.79,
+              "percentile_95_error_m": 194.79,
+              "drift_percentage": 197.79,
+              "drift_per_100m_travelled_m": 197.79,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 197.79,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 197.79,
+                "error_at_recovery_1s_m": 200.28,
+                "error_at_recovery_2s_m": 202.58,
+                "error_at_recovery_5s_m": 204.88
+              }
+            }
+          }
+        },
+        "30s_outage": {
+          "outage_start_sec": 30.0,
+          "outage_duration_sec": 30.0,
+          "outage_end_sec": 60.0,
+          "distance_travelled_during_outage_m": 300.0,
+          "scenarios": {
+            "Scenario_A_Normal_GNSS": {
+              "outage_rmse_m": 244.89,
+              "error_at_outage_start_m": 57.05,
+              "error_at_outage_midpoint_m": 201.44,
+              "error_at_outage_end_m": 452.25,
+              "max_outage_error_m": 452.25,
+              "percentile_95_error_m": 419.3,
+              "drift_percentage": 150.75,
+              "drift_per_100m_travelled_m": 150.75,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 150.75,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 452.25,
+                "error_at_recovery_1s_m": 475.33,
+                "error_at_recovery_2s_m": 499.31,
+                "error_at_recovery_5s_m": 576.84
+              }
+            },
+            "Scenario_B_ESKF_Outage": {
+              "outage_rmse_m": 244.89,
+              "error_at_outage_start_m": 57.05,
+              "error_at_outage_midpoint_m": 201.44,
+              "error_at_outage_end_m": 452.25,
+              "max_outage_error_m": 452.25,
+              "percentile_95_error_m": 419.3,
+              "drift_percentage": 150.75,
+              "drift_per_100m_travelled_m": 150.75,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 150.75,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 452.25,
+                "error_at_recovery_1s_m": 475.33,
+                "error_at_recovery_2s_m": 499.31,
+                "error_at_recovery_5s_m": 576.84
+              }
+            },
+            "Scenario_C_ESKF_AI": {
+              "outage_rmse_m": 188.64,
+              "error_at_outage_start_m": 140.21,
+              "error_at_outage_midpoint_m": 204.88,
+              "error_at_outage_end_m": 196.89,
+              "max_outage_error_m": 205.49,
+              "percentile_95_error_m": 204.89,
+              "drift_percentage": 65.63,
+              "drift_per_100m_travelled_m": 65.63,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 65.63,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 196.89,
+                "error_at_recovery_1s_m": 200.51,
+                "error_at_recovery_2s_m": 204.94,
+                "error_at_recovery_5s_m": 220.4
+              }
+            }
+          }
+        },
+        "60s_outage": {
+          "outage_start_sec": 30.0,
+          "outage_duration_sec": 60.0,
+          "outage_end_sec": 90.0,
+          "distance_travelled_during_outage_m": 450.05,
+          "scenarios": {
+            "Scenario_A_Normal_GNSS": {
+              "outage_rmse_m": 728.22,
+              "error_at_outage_start_m": 57.05,
+              "error_at_outage_midpoint_m": 452.25,
+              "error_at_outage_end_m": 1603.98,
+              "max_outage_error_m": 1603.98,
+              "percentile_95_error_m": 1441.22,
+              "drift_percentage": 356.4,
+              "drift_per_100m_travelled_m": 356.4,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 356.4,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 1603.98,
+                "error_at_recovery_1s_m": 1660.76,
+                "error_at_recovery_2s_m": 1718.84,
+                "error_at_recovery_5s_m": 1900.94
+              }
+            },
+            "Scenario_B_ESKF_Outage": {
+              "outage_rmse_m": 728.22,
+              "error_at_outage_start_m": 57.05,
+              "error_at_outage_midpoint_m": 452.25,
+              "error_at_outage_end_m": 1603.98,
+              "max_outage_error_m": 1603.98,
+              "percentile_95_error_m": 1441.22,
+              "drift_percentage": 356.4,
+              "drift_per_100m_travelled_m": 356.4,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 356.4,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 1603.98,
+                "error_at_recovery_1s_m": 1660.76,
+                "error_at_recovery_2s_m": 1718.84,
+                "error_at_recovery_5s_m": 1900.94
+              }
+            },
+            "Scenario_C_ESKF_AI": {
+              "outage_rmse_m": 219.23,
+              "error_at_outage_start_m": 140.21,
+              "error_at_outage_midpoint_m": 196.89,
+              "error_at_outage_end_m": 218.22,
+              "max_outage_error_m": 275.36,
+              "percentile_95_error_m": 272.75,
+              "drift_percentage": 48.49,
+              "drift_per_100m_travelled_m": 48.49,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 48.49,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 218.22,
+                "error_at_recovery_1s_m": 211.89,
+                "error_at_recovery_2s_m": 204.91,
+                "error_at_recovery_5s_m": 186.62
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "session_id": "session_005",
+      "session_name": "Suburban Arterial Loop",
+      "source_type": "SYNTHETIC",
+      "duration_sec": 120.0,
+      "outage_evaluations": {
+        "10s_outage": {
+          "outage_start_sec": 30.0,
+          "outage_duration_sec": 10.0,
+          "outage_end_sec": 40.0,
+          "distance_travelled_during_outage_m": 100.0,
+          "scenarios": {
+            "Scenario_A_Normal_GNSS": {
+              "outage_rmse_m": 101.89,
+              "error_at_outage_start_m": 59.89,
+              "error_at_outage_midpoint_m": 96.73,
+              "error_at_outage_end_m": 145.99,
+              "max_outage_error_m": 145.99,
+              "percentile_95_error_m": 140.46,
+              "drift_percentage": 145.99,
+              "drift_per_100m_travelled_m": 145.99,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 145.99,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 145.99,
+                "error_at_recovery_1s_m": 157.28,
+                "error_at_recovery_2s_m": 168.73,
+                "error_at_recovery_5s_m": 204.25
+              }
+            },
+            "Scenario_B_ESKF_Outage": {
+              "outage_rmse_m": 101.89,
+              "error_at_outage_start_m": 59.89,
+              "error_at_outage_midpoint_m": 96.73,
+              "error_at_outage_end_m": 145.99,
+              "max_outage_error_m": 145.99,
+              "percentile_95_error_m": 140.46,
+              "drift_percentage": 145.99,
+              "drift_per_100m_travelled_m": 145.99,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 145.99,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 145.99,
+                "error_at_recovery_1s_m": 157.28,
+                "error_at_recovery_2s_m": 168.73,
+                "error_at_recovery_5s_m": 204.25
+              }
+            },
+            "Scenario_C_ESKF_AI": {
+              "outage_rmse_m": 179.07,
+              "error_at_outage_start_m": 150.52,
+              "error_at_outage_midpoint_m": 179.65,
+              "error_at_outage_end_m": 204.13,
+              "max_outage_error_m": 204.13,
+              "percentile_95_error_m": 201.53,
+              "drift_percentage": 204.13,
+              "drift_per_100m_travelled_m": 204.13,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 204.13,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 204.13,
+                "error_at_recovery_1s_m": 206.77,
+                "error_at_recovery_2s_m": 208.61,
+                "error_at_recovery_5s_m": 210.58
+              }
+            }
+          }
+        },
+        "30s_outage": {
+          "outage_start_sec": 30.0,
+          "outage_duration_sec": 30.0,
+          "outage_end_sec": 60.0,
+          "distance_travelled_during_outage_m": 300.0,
+          "scenarios": {
+            "Scenario_A_Normal_GNSS": {
+              "outage_rmse_m": 241.99,
+              "error_at_outage_start_m": 59.89,
+              "error_at_outage_midpoint_m": 204.25,
+              "error_at_outage_end_m": 436.98,
+              "max_outage_error_m": 436.98,
+              "percentile_95_error_m": 406.54,
+              "drift_percentage": 145.66,
+              "drift_per_100m_travelled_m": 145.66,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 145.66,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 436.98,
+                "error_at_recovery_1s_m": 458.3,
+                "error_at_recovery_2s_m": 480.48,
+                "error_at_recovery_5s_m": 552.27
+              }
+            },
+            "Scenario_B_ESKF_Outage": {
+              "outage_rmse_m": 241.99,
+              "error_at_outage_start_m": 59.89,
+              "error_at_outage_midpoint_m": 204.25,
+              "error_at_outage_end_m": 436.98,
+              "max_outage_error_m": 436.98,
+              "percentile_95_error_m": 406.54,
+              "drift_percentage": 145.66,
+              "drift_per_100m_travelled_m": 145.66,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 145.66,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 436.98,
+                "error_at_recovery_1s_m": 458.3,
+                "error_at_recovery_2s_m": 480.48,
+                "error_at_recovery_5s_m": 552.27
+              }
+            },
+            "Scenario_C_ESKF_AI": {
+              "outage_rmse_m": 197.31,
+              "error_at_outage_start_m": 150.52,
+              "error_at_outage_midpoint_m": 210.58,
+              "error_at_outage_end_m": 214.14,
+              "max_outage_error_m": 214.14,
+              "percentile_95_error_m": 210.77,
+              "drift_percentage": 71.38,
+              "drift_per_100m_travelled_m": 71.38,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 71.38,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 214.14,
+                "error_at_recovery_1s_m": 218.87,
+                "error_at_recovery_2s_m": 224.05,
+                "error_at_recovery_5s_m": 241.59
+              }
+            }
+          }
+        },
+        "60s_outage": {
+          "outage_start_sec": 30.0,
+          "outage_duration_sec": 60.0,
+          "outage_end_sec": 90.0,
+          "distance_travelled_during_outage_m": 450.05,
+          "scenarios": {
+            "Scenario_A_Normal_GNSS": {
+              "outage_rmse_m": 694.96,
+              "error_at_outage_start_m": 59.89,
+              "error_at_outage_midpoint_m": 436.98,
+              "error_at_outage_end_m": 1529.02,
+              "max_outage_error_m": 1529.02,
+              "percentile_95_error_m": 1372.61,
+              "drift_percentage": 339.74,
+              "drift_per_100m_travelled_m": 339.74,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 339.74,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 1529.02,
+                "error_at_recovery_1s_m": 1583.67,
+                "error_at_recovery_2s_m": 1639.6,
+                "error_at_recovery_5s_m": 1815.09
+              }
+            },
+            "Scenario_B_ESKF_Outage": {
+              "outage_rmse_m": 694.96,
+              "error_at_outage_start_m": 59.89,
+              "error_at_outage_midpoint_m": 436.98,
+              "error_at_outage_end_m": 1529.02,
+              "max_outage_error_m": 1529.02,
+              "percentile_95_error_m": 1372.61,
+              "drift_percentage": 339.74,
+              "drift_per_100m_travelled_m": 339.74,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 339.74,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 1529.02,
+                "error_at_recovery_1s_m": 1583.67,
+                "error_at_recovery_2s_m": 1639.6,
+                "error_at_recovery_5s_m": 1815.09
+              }
+            },
+            "Scenario_C_ESKF_AI": {
+              "outage_rmse_m": 232.98,
+              "error_at_outage_start_m": 150.52,
+              "error_at_outage_midpoint_m": 214.14,
+              "error_at_outage_end_m": 235.87,
+              "max_outage_error_m": 292.83,
+              "percentile_95_error_m": 290.59,
+              "drift_percentage": 52.41,
+              "drift_per_100m_travelled_m": 52.41,
+              "preliminary_sih_target_check": {
+                "target_threshold_pct": 10.0,
+                "measured_drift_pct": 52.41,
+                "status": "FAIL",
+                "disclaimer": "Preliminary target check on this recording/session."
+              },
+              "recovery": {
+                "error_at_recovery_0s_m": 235.87,
+                "error_at_recovery_1s_m": 230.96,
+                "error_at_recovery_2s_m": 224.99,
+                "error_at_recovery_5s_m": 206.86
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "domain_shift_summary": {
+    "baseline_sample_count": 36003,
+    "target_sample_count": 20002,
+    "baseline_accel_norm_mean": 9.845579263676242,
+    "target_accel_norm_mean": 9.846191808921041,
+    "baseline_gyro_norm_mean": 0.01235155958481461,
+    "target_gyro_norm_mean": 0.012294435107086457,
+    "domain_shift_notice": "Distributions analyzed and saved to results/multi_session/domain_shift/"
+  }
+}

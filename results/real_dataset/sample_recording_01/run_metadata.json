@@ -1,0 +1,16 @@
+{
+  "dataset_name": "sample_recording_01",
+  "config_file": "config/datasets/example_generic_csv.yaml",
+  "adapter_class": "GenericCSVAdapter",
+  "origin": {
+    "lat": 12.971577237486008,
+    "lon": 77.59461519713183,
+    "alt": 919.9579597348348
+  },
+  "imu_sample_count": 8001,
+  "gnss_sample_count": 81,
+  "ground_truth_available": true,
+  "ai_model_loaded": true,
+  "map_network_loaded": true,
+  "outage_simulation": true
+}

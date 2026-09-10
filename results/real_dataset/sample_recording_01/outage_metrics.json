@@ -1,0 +1,53 @@
+{
+  "Scenario B (ESKF Outage)": {
+    "distance_travelled_during_outage_m": 299.99999999923546,
+    "error_at_outage_start_m": 440.9416333641235,
+    "error_at_outage_midpoint_m": 984.8969586988919,
+    "error_at_outage_end_m": 1713.9422957115132,
+    "outage_rmse_m": 1080.3407413042232,
+    "max_outage_error_m": 1713.9422957115132,
+    "final_error_m": 2983.920496880337,
+    "drift_percentage": 571.3140985719604,
+    "drift_per_100m_travelled_m": 571.3140985719604,
+    "preliminary_sih_target_check": {
+      "target_threshold_pct": 10.0,
+      "measured_drift_pct": 571.3140985719604,
+      "status": "FAIL",
+      "disclaimer": "Preliminary target check on this recording. Official SIH compliance requires multi-session benchmark validation."
+    }
+  },
+  "Scenario C (ESKF + AI)": {
+    "distance_travelled_during_outage_m": 299.99999999923546,
+    "error_at_outage_start_m": 165.2008848102042,
+    "error_at_outage_midpoint_m": 250.3515630857323,
+    "error_at_outage_end_m": 296.5680231119927,
+    "outage_rmse_m": 242.65012825395866,
+    "max_outage_error_m": 296.5680231119927,
+    "final_error_m": 372.5134087360288,
+    "drift_percentage": 98.8560077042495,
+    "drift_per_100m_travelled_m": 98.8560077042495,
+    "preliminary_sih_target_check": {
+      "target_threshold_pct": 10.0,
+      "measured_drift_pct": 98.8560077042495,
+      "status": "FAIL",
+      "disclaimer": "Preliminary target check on this recording. Official SIH compliance requires multi-session benchmark validation."
+    }
+  },
+  "Scenario D (ESKF + AI + Map)": {
+    "distance_travelled_during_outage_m": 299.99999999923546,
+    "error_at_outage_start_m": 159.74052472966636,
+    "error_at_outage_midpoint_m": 241.70330957349992,
+    "error_at_outage_end_m": 299.9215592335995,
+    "outage_rmse_m": 237.67878809552766,
+    "max_outage_error_m": 299.9297307757745,
+    "final_error_m": 376.4807316633351,
+    "drift_percentage": 99.9738530781213,
+    "drift_per_100m_travelled_m": 99.9738530781213,
+    "preliminary_sih_target_check": {
+      "target_threshold_pct": 10.0,
+      "measured_drift_pct": 99.9738530781213,
+      "status": "FAIL",
+      "disclaimer": "Preliminary target check on this recording. Official SIH compliance requires multi-session benchmark validation."
+    }
+  }
+}

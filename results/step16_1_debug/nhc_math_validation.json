@@ -1,0 +1,128 @@
+{
+  "known_heading_tests": {
+    "East (0 deg)": {
+      "heading_deg": 0.0,
+      "v_body_before": [
+        10.0,
+        2.0,
+        1.0
+      ],
+      "v_body_after": [
+        10.083217753120666,
+        0.6638927415626442,
+        0.3319463707813222
+      ],
+      "v_enu_before": [
+        10.0,
+        2.0,
+        1.0
+      ],
+      "v_enu_after": [
+        10.0,
+        1.333333333333333,
+        0.6666666666666666
+      ],
+      "forward_velocity_preserved": true,
+      "lateral_reduced": true,
+      "vertical_reduced": true,
+      "accepted": true,
+      "mahalanobis_dist": 12.909944487358057
+    },
+    "North (90 deg)": {
+      "heading_deg": 90.0,
+      "v_body_before": [
+        10.0,
+        2.0,
+        1.0
+      ],
+      "v_body_after": [
+        10.083217753120666,
+        0.6638927415626447,
+        0.3319463707813222
+      ],
+      "v_enu_before": [
+        -1.9999999999999978,
+        10.0,
+        1.0
+      ],
+      "v_enu_after": [
+        -1.3333333333333308,
+        10.0,
+        0.6666666666666666
+      ],
+      "forward_velocity_preserved": true,
+      "lateral_reduced": true,
+      "vertical_reduced": true,
+      "accepted": true,
+      "mahalanobis_dist": 12.909944487358057
+    },
+    "West (180 deg)": {
+      "heading_deg": 180.0,
+      "v_body_before": [
+        10.0,
+        2.0,
+        1.0
+      ],
+      "v_body_after": [
+        10.083217753120666,
+        0.6638927415626442,
+        0.3319463707813222
+      ],
+      "v_enu_before": [
+        -10.0,
+        -1.9999999999999987,
+        1.0
+      ],
+      "v_enu_after": [
+        -10.0,
+        -1.3333333333333317,
+        0.6666666666666666
+      ],
+      "forward_velocity_preserved": true,
+      "lateral_reduced": true,
+      "vertical_reduced": true,
+      "accepted": true,
+      "mahalanobis_dist": 12.909944487358057
+    },
+    "South (270 deg)": {
+      "heading_deg": 270.0,
+      "v_body_before": [
+        10.0,
+        2.0,
+        1.0
+      ],
+      "v_body_after": [
+        10.083217753120666,
+        0.6638927415626458,
+        0.3319463707813222
+      ],
+      "v_enu_before": [
+        1.9999999999999978,
+        -10.0,
+        1.0
+      ],
+      "v_enu_after": [
+        1.3333333333333308,
+        -10.0,
+        0.6666666666666666
+      ],
+      "forward_velocity_preserved": true,
+      "lateral_reduced": true,
+      "vertical_reduced": true,
+      "accepted": true,
+      "mahalanobis_dist": 12.909944487358057
+    }
+  },
+  "jacobian_perturbation_100_states": {
+    "nhc": {
+      "max_absolute_error": 6.710765276807251e-09,
+      "mean_absolute_error": 2.4880053553731167e-10,
+      "rmse": 5.833361311457371e-10
+    },
+    "zupt": {
+      "max_absolute_error": 1.0279563866788521e-09,
+      "mean_absolute_error": 3.421609464895583e-11,
+      "rmse": 1.6386076943591176e-10
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "provenance": "SOFTWARE_HARNESS",
+  "hardware": "Apple Silicon Host (macOS Darwin)",
+  "physical_android_status": "DEVICE_UNAVAILABLE_PENDING_HANDSET",
+  "bench_iterations": 2000,
+  "nhc_update_latency_us": 74.9,
+  "zupt_detector_latency_us": 16.38,
+  "zupt_update_latency_us": 64.51,
+  "combined_100hz_loop_latency_us": 171.3,
+  "max_realtime_frequency_hz": 5837.6
+}

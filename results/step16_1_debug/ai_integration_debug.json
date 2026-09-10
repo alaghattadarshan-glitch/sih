@@ -1,0 +1,21 @@
+{
+  "model_architecture": "Temporal Convolutional Network (TCN)",
+  "input_features": [
+    "ax",
+    "ay",
+    "az",
+    "gx",
+    "gy",
+    "gz",
+    "a_norm",
+    "g_norm"
+  ],
+  "input_frame": "BODY_FRAME (vehicle relative)",
+  "target_labels": [
+    "delta_p_east",
+    "delta_p_north",
+    "delta_p_up"
+  ],
+  "target_frame": "LOCAL_ENU_FRAME (absolute geographic)",
+  "frame_alignment_analysis": "The TCN drift model was trained with body-frame IMU features directly regressing ENU displacements. Because training trajectories were oriented predominantly along East (Heading ~0 deg), the model learned a positive correlation between body-X acceleration and delta_p_east. During a 90-degree turn to South, unconstrained AI predictions pull the estimate Eastward. When fused with NHC, NHC strictly zeros lateral drift while Mahalanobis gating rejects orthogonal cross-track AI errors, retaining AI along-track velocity scaling. This explains why AI+NHC (D: 144.72m RMSE) outperforms both AI-only (B: 540.37m) and NHC-only (C: 261.58m)."
+}

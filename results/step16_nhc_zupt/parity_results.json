@@ -1,0 +1,21 @@
+{
+  "provenance": "SOFTWARE_HARNESS",
+  "library_tested": "android/native/build/libnav_core.dylib",
+  "nhc_parity": {
+    "accepted_py": false,
+    "accepted_cpp": false,
+    "mahalanobis_diff": 0.0,
+    "velocity_diff_mps": 0.0,
+    "position_diff_m": 0.0,
+    "parity_pass": true
+  },
+  "zupt_parity": {
+    "accepted_py": true,
+    "accepted_cpp": true,
+    "mahalanobis_diff": 0.0,
+    "velocity_diff_mps": 0.0,
+    "position_diff_m": 0.0,
+    "parity_pass": true
+  },
+  "overall_parity_pass": true
+}

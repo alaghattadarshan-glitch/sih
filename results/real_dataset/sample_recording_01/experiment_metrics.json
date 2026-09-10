@@ -1,0 +1,26 @@
+{
+  "dataset_name": "sample_recording_01",
+  "scenarios": {
+    "Scenario A (Continuous GNSS)": {
+      "max_velocity_mps": 73.10523848994796,
+      "mean_speed_mps": 28.99450542254408
+    },
+    "Scenario B (Outage INS/ESKF)": {
+      "final_position_enu": [
+        -2286.2083589552303,
+        307.8734858077117,
+        16.018119528305537
+      ]
+    },
+    "Scenario C (Outage ESKF + AI)": {
+      "ai_updates_accepted": 80,
+      "ai_updates_rejected": 0,
+      "ai_acceptance_rate_pct": 100.0
+    },
+    "Scenario D (Outage ESKF + AI + Map)": {
+      "map_updates_accepted": 53,
+      "map_updates_rejected": 27,
+      "map_acceptance_rate_pct": 66.25
+    }
+  }
+}

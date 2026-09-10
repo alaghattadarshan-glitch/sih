@@ -1,0 +1,12 @@
+{
+  "stationary_isolation_test": {
+    "duration_sec": 10.0,
+    "final_detector_state": "STATIONARY",
+    "stationary_fraction": 1.0
+  },
+  "multi_phase_transition_test": {
+    "phase_0_10s_stationary": 1.0,
+    "phase_10_20s_moving_rejected": 0.1525,
+    "phase_20_30s_restationary": 1.0
+  }
+}

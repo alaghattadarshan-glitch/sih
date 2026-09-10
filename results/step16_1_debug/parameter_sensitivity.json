@@ -1,0 +1,229 @@
+{
+  "sensitivity_grid": [
+    {
+      "nhc_sigma": 0.01,
+      "gate_threshold": 3.0,
+      "outage_rmse_m": 238.83634664658612,
+      "final_error_m": 319.83569507407805,
+      "nhc_accepted": 3960,
+      "zupt_accepted": 13,
+      "ai_accepted": 24
+    },
+    {
+      "nhc_sigma": 0.01,
+      "gate_threshold": 4.0,
+      "outage_rmse_m": 258.78340296428456,
+      "final_error_m": 339.4923309183499,
+      "nhc_accepted": 3960,
+      "zupt_accepted": 21,
+      "ai_accepted": 25
+    },
+    {
+      "nhc_sigma": 0.01,
+      "gate_threshold": 6.0,
+      "outage_rmse_m": 258.78340296428456,
+      "final_error_m": 339.4923309183499,
+      "nhc_accepted": 3960,
+      "zupt_accepted": 21,
+      "ai_accepted": 25
+    },
+    {
+      "nhc_sigma": 0.01,
+      "gate_threshold": 10.0,
+      "outage_rmse_m": 233.08928432777492,
+      "final_error_m": 306.3695429921466,
+      "nhc_accepted": 3960,
+      "zupt_accepted": 45,
+      "ai_accepted": 24
+    },
+    {
+      "nhc_sigma": 0.01,
+      "gate_threshold": 25.0,
+      "outage_rmse_m": 265.11247222227894,
+      "final_error_m": 362.74817206765266,
+      "nhc_accepted": 4367,
+      "zupt_accepted": 2831,
+      "ai_accepted": 23
+    },
+    {
+      "nhc_sigma": 0.05,
+      "gate_threshold": 3.0,
+      "outage_rmse_m": 158.81717570792912,
+      "final_error_m": 237.8055384950321,
+      "nhc_accepted": 3960,
+      "zupt_accepted": 0,
+      "ai_accepted": 24
+    },
+    {
+      "nhc_sigma": 0.05,
+      "gate_threshold": 4.0,
+      "outage_rmse_m": 140.24838868107358,
+      "final_error_m": 215.96980664588074,
+      "nhc_accepted": 3960,
+      "zupt_accepted": 21,
+      "ai_accepted": 23
+    },
+    {
+      "nhc_sigma": 0.05,
+      "gate_threshold": 6.0,
+      "outage_rmse_m": 133.80636856208207,
+      "final_error_m": 205.91667321188996,
+      "nhc_accepted": 3960,
+      "zupt_accepted": 24,
+      "ai_accepted": 24
+    },
+    {
+      "nhc_sigma": 0.05,
+      "gate_threshold": 10.0,
+      "outage_rmse_m": 233.1534083020041,
+      "final_error_m": 344.92775211148194,
+      "nhc_accepted": 3960,
+      "zupt_accepted": 7,
+      "ai_accepted": 21
+    },
+    {
+      "nhc_sigma": 0.05,
+      "gate_threshold": 25.0,
+      "outage_rmse_m": 266.3652802862722,
+      "final_error_m": 362.1983557599195,
+      "nhc_accepted": 4367,
+      "zupt_accepted": 2831,
+      "ai_accepted": 24
+    },
+    {
+      "nhc_sigma": 0.1,
+      "gate_threshold": 3.0,
+      "outage_rmse_m": 131.1838195849447,
+      "final_error_m": 214.95809365352332,
+      "nhc_accepted": 3960,
+      "zupt_accepted": 3,
+      "ai_accepted": 22
+    },
+    {
+      "nhc_sigma": 0.1,
+      "gate_threshold": 4.0,
+      "outage_rmse_m": 116.46621584512755,
+      "final_error_m": 192.00930257186474,
+      "nhc_accepted": 3960,
+      "zupt_accepted": 24,
+      "ai_accepted": 26
+    },
+    {
+      "nhc_sigma": 0.1,
+      "gate_threshold": 6.0,
+      "outage_rmse_m": 116.46621584512755,
+      "final_error_m": 192.00930257186474,
+      "nhc_accepted": 3960,
+      "zupt_accepted": 24,
+      "ai_accepted": 26
+    },
+    {
+      "nhc_sigma": 0.1,
+      "gate_threshold": 10.0,
+      "outage_rmse_m": 253.4032029464182,
+      "final_error_m": 365.8577759151063,
+      "nhc_accepted": 3960,
+      "zupt_accepted": 13,
+      "ai_accepted": 22
+    },
+    {
+      "nhc_sigma": 0.1,
+      "gate_threshold": 25.0,
+      "outage_rmse_m": 269.158630005002,
+      "final_error_m": 365.13930477399146,
+      "nhc_accepted": 4367,
+      "zupt_accepted": 2831,
+      "ai_accepted": 24
+    },
+    {
+      "nhc_sigma": 0.2,
+      "gate_threshold": 3.0,
+      "outage_rmse_m": 128.90315668742872,
+      "final_error_m": 222.17023867959142,
+      "nhc_accepted": 3960,
+      "zupt_accepted": 3,
+      "ai_accepted": 20
+    },
+    {
+      "nhc_sigma": 0.2,
+      "gate_threshold": 4.0,
+      "outage_rmse_m": 129.82152548390837,
+      "final_error_m": 222.92455902923507,
+      "nhc_accepted": 3960,
+      "zupt_accepted": 6,
+      "ai_accepted": 20
+    },
+    {
+      "nhc_sigma": 0.2,
+      "gate_threshold": 6.0,
+      "outage_rmse_m": 98.12767269970183,
+      "final_error_m": 183.2356980217783,
+      "nhc_accepted": 3960,
+      "zupt_accepted": 24,
+      "ai_accepted": 25
+    },
+    {
+      "nhc_sigma": 0.2,
+      "gate_threshold": 10.0,
+      "outage_rmse_m": 172.4479776053155,
+      "final_error_m": 248.16495687734846,
+      "nhc_accepted": 3960,
+      "zupt_accepted": 44,
+      "ai_accepted": 26
+    },
+    {
+      "nhc_sigma": 0.2,
+      "gate_threshold": 25.0,
+      "outage_rmse_m": 270.9194677900493,
+      "final_error_m": 367.08075704492927,
+      "nhc_accepted": 4367,
+      "zupt_accepted": 2831,
+      "ai_accepted": 24
+    },
+    {
+      "nhc_sigma": 0.5,
+      "gate_threshold": 3.0,
+      "outage_rmse_m": 100.84597445439962,
+      "final_error_m": 193.920245384345,
+      "nhc_accepted": 3960,
+      "zupt_accepted": 0,
+      "ai_accepted": 25
+    },
+    {
+      "nhc_sigma": 0.5,
+      "gate_threshold": 4.0,
+      "outage_rmse_m": 102.6871883716102,
+      "final_error_m": 192.68435605072145,
+      "nhc_accepted": 3960,
+      "zupt_accepted": 24,
+      "ai_accepted": 25
+    },
+    {
+      "nhc_sigma": 0.5,
+      "gate_threshold": 6.0,
+      "outage_rmse_m": 102.6871883716102,
+      "final_error_m": 192.68435605072145,
+      "nhc_accepted": 3960,
+      "zupt_accepted": 24,
+      "ai_accepted": 25
+    },
+    {
+      "nhc_sigma": 0.5,
+      "gate_threshold": 10.0,
+      "outage_rmse_m": 170.9882032542967,
+      "final_error_m": 247.80066568634598,
+      "nhc_accepted": 4113,
+      "zupt_accepted": 44,
+      "ai_accepted": 25
+    },
+    {
+      "nhc_sigma": 0.5,
+      "gate_threshold": 25.0,
+      "outage_rmse_m": 272.0433814353383,
+      "final_error_m": 368.33989391608304,
+      "nhc_accepted": 4367,
+      "zupt_accepted": 2831,
+      "ai_accepted": 24
+    }
+  ]
+}
