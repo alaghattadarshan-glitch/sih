@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIH-26168 | AI-ML Intelligent Dead Reckoning Prototype</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Header -->
+    <header class="app-header">
+      <div class="header-left">
+        <div class="badge-sih">SIH-26168</div>
+        <div class="title-container">
+          <h1>AI-ML INTELLIGENT DEAD RECKONING</h1>
+          <p class="subtitle">Seamless Vehicle Navigation During GNSS Outages</p>
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="provenance-badge">
+          <span class="badge-dot"></span>
+          <span id="provenance-text">DEMO DATA: SYNTHETIC / OFFLINE REPLAY</span>
+        </div>
+        
+        <!-- View Mode Switcher -->
+        <div class="view-mode-toggle">
+          <button class="view-toggle-btn active" id="btn-view-simple" onclick="setViewMode('simple')">
+            🎯 Simple Demo View
+          </button>
+          <button class="view-toggle-btn" id="btn-view-tech" onclick="setViewMode('technical')">
+            🔬 Technical View
+          </button>
+        </div>
+
+        <!-- Prominent Navigation Mode Pill -->
+        <div class="mode-pill mode-gnss-aided" id="nav-mode-pill">
+          <span class="mode-indicator-dot"></span>
+          <span id="nav-mode-text">GNSS_AIDED</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navigation Tab Bar -->
+    <nav class="nav-tabs">
+      <button class="tab-btn active" id="tab-live-btn" onclick="switchTab('live')">
+        <span class="tab-icon">🛰️</span> Live Navigation Dashboard
+      </button>
+      <button class="tab-btn" id="tab-bench-btn" onclick="switchTab('benchmark')">
+        <span class="tab-icon">📊</span> Step 17 Benchmark Matrix
+      </button>
+    </nav>
+
+    <!-- System Pipeline Flow Ribbon -->
+    <div class="pipeline-ribbon">
+      <div class="pipe-node active" id="pipe-imu">IMU 100Hz</div>
+      <div class="pipe-arrow">➔</div>
+      <div class="pipe-node active" id="pipe-ins">INS STRAPDOWN</div>
+      <div class="pipe-arrow">➔</div>
+      <div class="pipe-node active" id="pipe-eskf">15-STATE ESKF</div>
+      <div class="pipe-arrow">➔</div>
+      <div class="pipe-node" id="pipe-outage">GNSS OUTAGE DETECTOR</div>
+      <div class="pipe-arrow">➔</div>
+      <div class="pipe-node" id="pipe-ai">TCN AI</div>
+      <div class="pipe-arrow">+</div>
+      <div class="pipe-node" id="pipe-nhc">NHC</div>
+      <div class="pipe-arrow">+</div>
+      <div class="pipe-node" id="pipe-zupt">ZUPT</div>
+      <div class="pipe-arrow">➔</div>
+      <div class="pipe-node" id="pipe-map">MAP MATCHING</div>
+      <div class="pipe-arrow">➔</div>
+      <div class="pipe-node active" id="pipe-out">NAVIGATION OUTPUT</div>
+    </div>
+
+    <!-- Main Control Bar -->
+    <section class="control-panel">
+      <div class="control-group playback-group">
+        <button class="ctrl-btn btn-primary" id="btn-start" onclick="sendControl('start')">▶ Start</button>
+        <button class="ctrl-btn btn-secondary" id="btn-pause" onclick="sendControl('pause')">⏸ Pause</button>
+        <button class="ctrl-btn btn-secondary" id="btn-reset" onclick="sendControl('reset')">↺ Reset</button>
+        <button class="ctrl-btn btn-secondary tech-only" id="btn-step" onclick="sendControl('step')">⏭ Step</button>
+      </div>
+
+      <div class="control-group demo-actions-group">
+        <button class="ctrl-btn btn-danger" id="btn-outage" onclick="sendControl('outage/start')">🚨 Simulate Outage</button>
+        <button class="ctrl-btn btn-success" id="btn-restore" onclick="sendControl('outage/restore')">📡 Restore GNSS</button>
+        <button class="ctrl-btn btn-accent pulse-btn" id="btn-demo" onclick="sendControl('demo/run')">✨ Run Full SIH Demo</button>
+      </div>
+
+      <div class="control-group config-selects">
+        <div class="select-wrapper">
+          <label>Scenario:</label>
+          <select id="sel-scenario" onchange="updateConfig()">
+            <option value="mixed_urban" selected>Mixed Urban Driving</option>
+            <option value="straight">Straight Highway</option>
+            <option value="turning">Urban Turning</option>
+            <option value="stop_and_go">Stop & Go (Traffic Light)</option>
+            <option value="accel_decel">Dynamic Accel/Decel</option>
+          </select>
+        </div>
+
+        <div class="select-wrapper">
+          <label>Outage Duration:</label>
+          <select id="sel-duration" onchange="updateConfig()">
+            <option value="5">5 sec</option>
+            <option value="10">10 sec</option>
+            <option value="20">20 sec</option>
+            <option value="30" selected>30 sec</option>
+            <option value="60">60 sec</option>
+          </select>
+        </div>
+
+        <div class="select-wrapper">
+          <label>Speed:</label>
+          <select id="sel-speed" onchange="updateConfig()">
+            <option value="1">1x</option>
+            <option value="2">2x</option>
+            <option value="3" selected>3x</option>
+            <option value="5">5x</option>
+            <option value="10">10x</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="control-group toggle-group tech-only">
+        <label class="toggle-btn active" id="tog-ai" onclick="toggleFeature('enable_ai')">
+          <input type="checkbox" checked hidden> AI (TCN)
+        </label>
+        <label class="toggle-btn active" id="tog-nhc" onclick="toggleFeature('enable_nhc')">
+          <input type="checkbox" checked hidden> NHC
+        </label>
+        <label class="toggle-btn active" id="tog-zupt" onclick="toggleFeature('enable_zupt')">
+          <input type="checkbox" checked hidden> ZUPT
+        </label>
+        <label class="toggle-btn active" id="tog-map" onclick="toggleFeature('enable_map')">
+          <input type="checkbox" checked hidden> MAP
+        </label>
+      </div>
+    </section>
+
+    <!-- Tab 1: Live Navigation Dashboard -->
+    <main class="dashboard-content" id="view-live">
+      
+      <!-- Top Row: Big Outage Card & "What the System Is Doing" Panel -->
+      <section class="banner-strip">
+        <!-- Outage Demonstration Card -->
+        <div class="card outage-banner" id="outage-card">
+          <div class="outage-header">
+            <span class="outage-icon" id="outage-icon-sym">🛰️</span>
+            <div class="outage-title">
+              <h3 id="outage-state-title">GNSS SIGNAL NOMINAL</h3>
+              <p id="outage-state-desc">Full carrier lock active — 15-State ESKF nominal position aiding active</p>
+            </div>
+            <div class="outage-timer-wrap">
+              <span class="outage-timer-lbl">OUTAGE TIMER</span>
+              <div class="outage-timer" id="outage-timer-box">00:00.0</div>
+            </div>
+          </div>
+          <div class="outage-metrics-row">
+            <div class="out-metric">
+              <span class="lbl">Outage Distance:</span>
+              <span class="val" id="val-out-dist">0.0 m</span>
+            </div>
+            <div class="out-metric">
+              <span class="lbl">Dead-Reckon Drift:</span>
+              <span class="val highlight" id="val-out-drift">0.00 %</span>
+            </div>
+            <div class="out-metric">
+              <span class="lbl">SIH Target (&lt;10%):</span>
+              <span class="val pass-badge" id="val-sih-badge">PASS</span>
+            </div>
+            <div class="out-metric tech-only">
+              <span class="lbl">Pure INS Baseline Error:</span>
+              <span class="val text-red" id="val-ins-error">0.00 m</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- "What the System Is Doing" Panel (Judge Friendly Plain English) -->
+        <div class="card operation-card" id="operation-card">
+          <div class="card-header-compact">
+            <span class="op-indicator-dot"></span>
+            <h3>📋 CURRENT OPERATION</h3>
+            <span class="op-mode-badge" id="op-mode-badge">GNSS_AIDED</span>
+          </div>
+          <div class="operation-body" id="op-body-text">
+            <p class="op-primary-msg">
+              <strong>GNSS is available.</strong> The 15-State ESKF is fusing 1 Hz satellite fixes with 100 Hz IMU dead-reckoning to eliminate sensor biases.
+            </p>
+            <div class="active-subsystems-list" id="op-active-subsystems">
+              <span class="op-tag active">✓ IMU</span>
+              <span class="op-tag active">✓ INS</span>
+              <span class="op-tag active">✓ ESKF</span>
+              <span class="op-tag">TCN AI (Standby)</span>
+              <span class="op-tag">NHC (Standby)</span>
+              <span class="op-tag">ZUPT (Standby)</span>
+              <span class="op-tag">Map Matching (Standby)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Layout Grid -->
+      <section class="main-visual-grid">
+        
+        <!-- Column 1: Map (PRIMARY VISUAL) & Quick Telemetry -->
+        <div class="grid-col col-primary-map">
+          <div class="card map-card">
+            <div class="card-header">
+              <div class="map-title-group">
+                <h2>🗺️ Live Tangent Plane (ENU) Trajectory Map</h2>
+                <span class="map-sub-badge">AUTO-SCALED TO ACTIVE TRAJECTORY</span>
+              </div>
+              <div class="map-actions">
+                <button class="map-tool-btn active" onclick="toggleFollow()" id="btn-follow">Follow: ON</button>
+                <button class="map-tool-btn" onclick="fitMap()">Fit Trajectory</button>
+                <button class="map-tool-btn" onclick="resetMap()">Center View</button>
+              </div>
+            </div>
+            <div class="map-container">
+              <canvas id="map-canvas" width="760" height="460"></canvas>
+              
+              <!-- High-Contrast Legend -->
+              <div class="map-legend">
+                <span class="leg-item"><span class="leg-line leg-gt"></span> Ground Truth</span>
+                <span class="leg-item"><span class="leg-line leg-full"></span> Full Stack Navigation</span>
+                <span class="leg-item"><span class="leg-line leg-ins"></span> Pure INS Baseline</span>
+                <span class="leg-item"><span class="leg-marker">▲</span> Current Vehicle</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fast Summary Telemetry Bar -->
+          <div class="card summary-tele-bar">
+            <div class="quick-tele-item">
+              <span class="qt-label">Ground Speed</span>
+              <span class="qt-val" id="tel-speed">0.0 <small>km/h</small></span>
+              <span class="qt-sub" id="tel-speed-mps">0.00 m/s</span>
+            </div>
+            <div class="quick-tele-item">
+              <span class="qt-label">Heading (Yaw)</span>
+              <span class="qt-val" id="tel-heading">000.0°</span>
+              <span class="qt-sub" id="tel-heading-cardinal">East</span>
+            </div>
+            <div class="quick-tele-item">
+              <span class="qt-label">Full Stack 2D Error</span>
+              <span class="qt-val highlight-cyan" id="tel-err-2d">0.00 <small>m</small></span>
+              <span class="qt-sub" id="tel-err-ins">INS: 0.00 m</span>
+            </div>
+            <div class="quick-tele-item">
+              <span class="qt-label">Position Uncertainty</span>
+              <span class="qt-val" id="tel-uncert">±0.00 <small>m</small></span>
+              <span class="qt-sub" id="tel-cov-trace">Tr(P): 0.00</span>
+            </div>
+            <div class="quick-tele-item">
+              <span class="qt-label">Simulation Clock</span>
+              <span class="qt-val mono" id="sim-clock">00:00.0s</span>
+              <span class="qt-sub" id="sim-scenario-lbl">Mixed Urban</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: Error Graph, AI/Constraint Explanations & Diagnostics -->
+        <div class="grid-col col-secondary-analytics">
+          
+          <!-- Real-Time Error Graph with Clear Outage Region -->
+          <div class="card chart-card">
+            <div class="card-header">
+              <h2>📉 Error vs Time (With GNSS Outage Region)</h2>
+              <span class="chart-tag" id="chart-outage-tag">OUTAGE: 30s – 60s</span>
+            </div>
+            <div class="chart-container">
+              <canvas id="error-chart" width="500" height="200"></canvas>
+              <div class="chart-legend-row">
+                <span class="ch-leg-item"><span class="ch-line-cyan"></span> Full Stack (AI+NHC+ZUPT)</span>
+                <span class="ch-leg-item"><span class="ch-line-red"></span> Pure INS (Drifting)</span>
+                <span class="ch-leg-item"><span class="ch-band-orange"></span> GNSS Outage Region</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Plain-English AI & Motion Constraints Explanations -->
+          <div class="card diag-card">
+            <div class="card-header">
+              <h2>🧠 AI & Motion Constraints Intelligence</h2>
+            </div>
+            <div class="diag-split">
+              <!-- AI Drift Correction Explanation -->
+              <div class="diag-half">
+                <div class="diag-sub-header">
+                  <span class="diag-icon">🤖</span>
+                  <h4>AI Drift Correction (TCN)</h4>
+                </div>
+                <p class="diag-explain">
+                  The TCN deep learning model analyzes the latest 1.0s (100 samples) of IMU motion and predicts relative vehicle displacement.
+                </p>
+                <div class="diag-stats-row">
+                  <div>Accepted: <strong class="text-green" id="diag-ai-acc">0</strong></div>
+                  <div>Rejected: <strong class="text-red" id="diag-ai-rej">0</strong></div>
+                  <div>Gate: <strong>&le; 16.0</strong></div>
+                </div>
+              </div>
+
+              <!-- Motion Constraints (NHC & ZUPT) Explanation -->
+              <div class="diag-half">
+                <div class="diag-sub-header">
+                  <span class="diag-icon">⚖️</span>
+                  <h4>Vehicle Kinematics (NHC / ZUPT)</h4>
+                </div>
+                <p class="diag-explain">
+                  <strong>NHC:</strong> Suppresses lateral/vertical wheel slip while driving.<br>
+                  <strong>ZUPT:</strong> Clamps velocity drift when stopped at red lights.
+                </p>
+                <div class="diag-stats-row">
+                  <div>NHC: <strong class="text-green" id="diag-nhc-acc">0</strong></div>
+                  <div>ZUPT: <strong class="text-green" id="diag-zupt-acc">0</strong></div>
+                  <div id="diag-stationary-wrap"><strong id="diag-stationary">MOVING</strong></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Road Map Matching Disclaimer & Explanation -->
+            <div class="map-matching-explain">
+              <div class="map-match-hdr">
+                <span>🛣️ <strong>MAP MATCHING:</strong> Constrains estimated vehicle position toward available road geometry.</span>
+                <span class="map-status-tag" id="map-match-tag">ACTIVE (DEMO MAP / SYNTHETIC ROAD NETWORK)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Technical Details (Shown only in Technical View) -->
+          <div class="card tech-details-card tech-only">
+            <div class="card-header">
+              <h2>🔬 Technical Subsystems & Event Stream</h2>
+            </div>
+            
+            <!-- Subsystem Status Grid -->
+            <div class="subsystems-grid">
+              <div class="subsystem-badge" id="sub-gnss">
+                <span class="sub-dot"></span>
+                <span class="sub-name">GNSS</span>
+                <span class="sub-status" id="st-gnss">ACTIVE</span>
+              </div>
+              <div class="subsystem-badge" id="sub-imu">
+                <span class="sub-dot"></span>
+                <span class="sub-name">IMU (100Hz)</span>
+                <span class="sub-status" id="st-imu">ACTIVE</span>
+              </div>
+              <div class="subsystem-badge" id="sub-ins">
+                <span class="sub-dot"></span>
+                <span class="sub-name">INS Prop</span>
+                <span class="sub-status" id="st-ins">ACTIVE</span>
+              </div>
+              <div class="subsystem-badge" id="sub-eskf">
+                <span class="sub-dot"></span>
+                <span class="sub-name">15-ESKF</span>
+                <span class="sub-status" id="st-eskf">ACTIVE</span>
+              </div>
+              <div class="subsystem-badge" id="sub-ai">
+                <span class="sub-dot"></span>
+                <span class="sub-name">TCN AI</span>
+                <span class="sub-status" id="st-ai">STANDBY</span>
+              </div>
+              <div class="subsystem-badge" id="sub-nhc">
+                <span class="sub-dot"></span>
+                <span class="sub-name">NHC</span>
+                <span class="sub-status" id="st-nhc">STANDBY</span>
+              </div>
+              <div class="subsystem-badge" id="sub-zupt">
+                <span class="sub-dot"></span>
+                <span class="sub-name">ZUPT</span>
+                <span class="sub-status" id="st-zupt">STANDBY</span>
+              </div>
+              <div class="subsystem-badge" id="sub-map">
+                <span class="sub-dot"></span>
+                <span class="sub-name">Map Match</span>
+                <span class="sub-status" id="st-map">STANDBY</span>
+              </div>
+            </div>
+
+            <!-- Coords Section -->
+            <div class="coords-section">
+              <div class="coord-row">
+                <span class="c-lbl">Local ENU:</span>
+                <span class="c-val mono" id="tel-enu">E: +0.00 m | N: +0.00 m | U: +0.00 m</span>
+              </div>
+              <div class="coord-row">
+                <span class="c-lbl">Geodetic:</span>
+                <span class="c-val mono" id="tel-llh">Lat: 12.971600° | Lon: 77.594600° | Alt: 920.0 m</span>
+              </div>
+              <div class="coord-row">
+                <span class="c-lbl">Velocity ENU:</span>
+                <span class="c-val mono" id="tel-vel">Ve: +0.00 m/s | Vn: +0.00 m/s | Vu: +0.00 m/s</span>
+              </div>
+            </div>
+
+            <!-- Sensor Stream Info -->
+            <div class="sensor-grid">
+              <div class="sens-col">
+                <h4>IMU Accelerometer (m/s²)</h4>
+                <p class="mono" id="sens-accel">X: +0.00 | Y: +0.00 | Z: +9.81</p>
+              </div>
+              <div class="sens-col">
+                <h4>IMU Gyroscope (rad/s)</h4>
+                <p class="mono" id="sens-gyro">X: +0.000 | Y: +0.000 | Z: +0.000</p>
+              </div>
+              <div class="sens-col">
+                <h4>GNSS Satellites & Dilution</h4>
+                <p class="mono" id="sens-gnss">Sats: 12 | HDOP: 0.9 | Acc: ±1.5m</p>
+              </div>
+            </div>
+
+            <!-- Event Log -->
+            <div class="event-log-container" id="event-log">
+              <div class="log-entry log-SYSTEM">[00:00.0] Initialized SIH-26168 Navigation Pipeline.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Tab 2: Step 17 Benchmark Matrix View -->
+    <main class="dashboard-content hidden" id="view-benchmark">
+      <div class="bench-container">
+        <div class="card bench-header-card">
+          <div class="card-header">
+            <h2>📊 Step 17 Master Benchmark Matrix (150 Scenarios Evaluated)</h2>
+            <span class="provenance-badge">PROVENANCE: SYNTHETIC_DATA</span>
+          </div>
+          <p class="bench-desc">
+            Evaluated across 5 Trajectory Scenarios &times; 5 Outage Durations (5s, 10s, 20s, 30s, 60s) &times; 6 Filter Configurations.
+          </p>
+
+          <div class="bench-filters">
+            <div class="filter-item">
+              <label>Filter Scenario:</label>
+              <select id="bench-filter-scen" onchange="renderBenchmarkTable()">
+                <option value="ALL">All Scenarios</option>
+                <option value="mixed_urban">Mixed Urban</option>
+                <option value="straight">Straight</option>
+                <option value="turning">Turning</option>
+                <option value="stop_and_go">Stop & Go</option>
+                <option value="accel_decel">Accel / Decel</option>
+              </select>
+            </div>
+            <div class="filter-item">
+              <label>Filter Outage Duration:</label>
+              <select id="bench-filter-dur" onchange="renderBenchmarkTable()">
+                <option value="ALL">All Durations</option>
+                <option value="5.0">5 sec</option>
+                <option value="10.0">10 sec</option>
+                <option value="20.0">20 sec</option>
+                <option value="30.0" selected>30 sec</option>
+                <option value="60.0">60 sec</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="card bench-table-card">
+          <div class="table-responsive">
+            <table class="bench-table" id="bench-results-table">
+              <thead>
+                <tr>
+                  <th>Scenario</th>
+                  <th>Configuration</th>
+                  <th>Outage (s)</th>
+                  <th>Distance (m)</th>
+                  <th>2D RMSE (m)</th>
+                  <th>Final Error (m)</th>
+                  <th>Drift %</th>
+                  <th>SIH Status</th>
+                </tr>
+              </thead>
+              <tbody id="bench-table-body">
+                <!-- Dynamically populated from /api/benchmark -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Final Result / Mission Summary Modal -->
+    <div class="modal-overlay hidden" id="mission-summary-modal">
+      <div class="modal-card">
+        <div class="modal-header">
+          <div class="modal-title-wrap">
+            <span class="modal-icon">🏁</span>
+            <h2>SIH-26168 DEMONSTRATION COMPLETE</h2>
+          </div>
+          <button class="modal-close-btn" onclick="closeMissionSummary()">✕</button>
+        </div>
+        <div class="modal-body">
+          <div class="summary-highlight-banner">
+            <div class="sh-item">
+              <span class="sh-lbl">Dead Reckon Drift</span>
+              <span class="sh-val text-green" id="sum-drift">0.85 %</span>
+            </div>
+            <div class="sh-item">
+              <span class="sh-lbl">SIH Target (&lt;10%)</span>
+              <span class="sh-badge pass" id="sum-sih-badge">PASS</span>
+            </div>
+            <div class="sh-item">
+              <span class="sh-lbl">GNSS Recovery</span>
+              <span class="sh-val text-green" id="sum-recovery">SUCCESS</span>
+            </div>
+          </div>
+
+          <div class="summary-details-grid">
+            <div class="sum-row">
+              <span class="s-k">Scenario:</span>
+              <span class="s-v" id="sum-scenario">Mixed Urban Driving</span>
+            </div>
+            <div class="sum-row">
+              <span class="s-k">GNSS Outage Duration:</span>
+              <span class="s-v" id="sum-outage-dur">30.0 s</span>
+            </div>
+            <div class="sum-row">
+              <span class="s-k">Distance Travelled in Outage:</span>
+              <span class="s-v" id="sum-outage-dist">482.3 m</span>
+            </div>
+            <div class="sum-row">
+              <span class="s-k">Pure INS Baseline Error:</span>
+              <span class="s-v text-red" id="sum-ins-err">89.45 m</span>
+            </div>
+            <div class="sum-row">
+              <span class="s-k">Full Stack Filter Error:</span>
+              <span class="s-v text-cyan" id="sum-fs-err">4.12 m</span>
+            </div>
+            <div class="sum-row">
+              <span class="s-k">Recovery Re-acquisition Time:</span>
+              <span class="s-v" id="sum-rec-time">1.20 s</span>
+            </div>
+            <div class="sum-row">
+              <span class="s-k">Data Source:</span>
+              <span class="s-v mono text-yellow" id="sum-data-src">DEMO DATA: SYNTHETIC / OFFLINE REPLAY</span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="ctrl-btn btn-secondary" onclick="closeMissionSummary()">Close</button>
+          <button class="ctrl-btn btn-accent" onclick="runDemoAgain()">✨ Run Again</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <span>SIH-26168 Navigation Core v1.0.0 | Python Engine & Native C++ Parity</span>
+      <span>Classification: <strong class="text-yellow">YELLOW</strong> (Software Validated | Physical Vehicle Trials Pending)</span>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+# IO-VNBD (Inertial Odometry / Vehicle Navigation Benchmark Dataset) Configuration Template
+# -----------------------------------------------------------------------------------------
+# NOTICE:
+# This configuration defines the standard schema mapping for IO-VNBD sequence ingestion.
+# When the IO-VNBD benchmark dataset archive is downloaded/placed in 'data/raw/io_vnbd/',
+# verify and point 'imu_file_path', 'gnss_file_path', and 'ground_truth_file_path'
+# to the target sequence files.
+
+dataset_name: "IO_VNBD_seq_01"
+imu_file_path: "data/raw/io_vnbd/seq_01/imu.csv" # Placeholder: pending dataset placement
+gnss_file_path: "data/raw/io_vnbd/seq_01/gnss.csv" # Placeholder: pending dataset placement
+ground_truth_file_path: "data/raw/io_vnbd/seq_01/ground_truth.csv" # Placeholder: pending dataset placement
+
+delimiter: ","
+skip_rows: 0
+max_sync_tolerance_sec: 0.5
+
+imu_mapping:
+  timestamp: "timestamp"
+  accel_x: "accel_x"
+  accel_y: "accel_y"
+  accel_z: "accel_z"
+  gyro_x: "gyro_x"
+  gyro_y: "gyro_y"
+  gyro_z: "gyro_z"
+  timestamp_unit: "s" # IO-VNBD timestamps in seconds
+  accel_unit: "m/s^2" # Acceleration in m/s^2
+  gyro_unit: "rad/s" # Angular rate in rad/s
+  axis_transform:
+    x_map: "+x"
+    y_map: "+y"
+    z_map: "+z"
+
+gnss_mapping:
+  timestamp: "timestamp"
+  latitude: "latitude"
+  longitude: "longitude"
+  altitude: "altitude"
+  horizontal_accuracy: "accuracy"
+  timestamp_unit: "s"
+
+ground_truth_mapping:
+  timestamp: "timestamp"
+  latitude: "latitude"
+  longitude: "longitude"
+  altitude: "altitude"
+  velocity_east: "velocity_east"
+  velocity_north: "velocity_north"
+  velocity_up: "velocity_up"
+  heading: "heading"
+  timestamp_unit: "s"
+
+calibration:
+  enabled: true
+  start_time_sec: 0.0
+  duration_sec: 5.0
+  max_accel_std_mps2: 0.4
+  max_gyro_std_rads: 0.05
+
+outage:
+  enabled: true
+  start_time_sec: 30.0
+  duration_sec: 30.0
+
+metadata:
+  benchmark_name: "IO-VNBD"
+  target_sequence: "seq_01"
+  status: "CONFIGURED_PENDING_DATASET_FILES"

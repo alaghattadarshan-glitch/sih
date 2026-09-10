@@ -1,0 +1,75 @@
+# Example Generic CSV Dataset Ingestion Configuration
+# Demonstrates ingestion of generic smartphone or vehicle sensor recordings.
+
+dataset_name: "sample_recording_01"
+imu_file_path: "data/sample/imu_sample.csv"
+gnss_file_path: "data/sample/gnss_sample.csv"
+ground_truth_file_path: "data/sample/ground_truth_sample.csv"
+
+delimiter: ","
+skip_rows: 0
+max_sync_tolerance_sec: 0.5
+
+imu_mapping:
+  timestamp: "timestamp"
+  accel_x: "accel_x"
+  accel_y: "accel_y"
+  accel_z: "accel_z"
+  gyro_x: "gyro_x"
+  gyro_y: "gyro_y"
+  gyro_z: "gyro_z"
+  mag_x: "mag_x"
+  mag_y: "mag_y"
+  mag_z: "mag_z"
+  timestamp_unit: "s" # Options: s, ms, us, ns
+  accel_unit: "m/s^2" # Options: m/s^2, g
+  gyro_unit: "rad/s" # Options: rad/s, deg/s
+  axis_transform:
+    x_map: "+x"
+    y_map: "+y"
+    z_map: "+z"
+
+gnss_mapping:
+  timestamp: "timestamp"
+  latitude: "latitude"
+  longitude: "longitude"
+  altitude: "altitude"
+  velocity_east: "velocity_east"
+  velocity_north: "velocity_north"
+  velocity_up: "velocity_up"
+  speed: "speed"
+  heading: "heading"
+  horizontal_accuracy: "horizontal_accuracy"
+  vertical_accuracy: "vertical_accuracy"
+  timestamp_unit: "s"
+
+ground_truth_mapping:
+  timestamp: "timestamp"
+  latitude: "latitude"
+  longitude: "longitude"
+  altitude: "altitude"
+  velocity_east: "velocity_east"
+  velocity_north: "velocity_north"
+  velocity_up: "velocity_up"
+  speed: "speed"
+  heading: "heading"
+  roll: "roll"
+  pitch: "pitch"
+  yaw: "yaw"
+  timestamp_unit: "s"
+
+calibration:
+  enabled: true
+  start_time_sec: 0.0
+  duration_sec: 5.0
+  max_accel_std_mps2: 0.4
+  max_gyro_std_rads: 0.05
+
+outage:
+  enabled: true
+  start_time_sec: 30.0
+  duration_sec: 30.0
+
+metadata:
+  device_type: "vehicle_logger"
+  description: "Standard synchronized sample dataset for testing"

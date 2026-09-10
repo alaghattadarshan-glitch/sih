@@ -1,0 +1,4 @@
+timestamp,latitude,longitude,altitude,velocity_east,velocity_north,velocity_up,heading
+0.0,12.9716,77.5946,920.0,0.0,0.0,0.0,90.0
+1.0,12.9716,77.5947,920.0,10.0,0.0,0.0,90.0
+2.0,12.9716,77.5948,920.0,10.0,0.0,0.0,90.0

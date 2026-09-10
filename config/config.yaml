@@ -1,0 +1,140 @@
+project:
+  name: "SIH26168 Intelligent Dead Reckoning System"
+  version: "0.1.0"
+  environment: "development"
+
+data:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  sample_dir: "data/sample"
+  sampling_rate_hz: 100
+
+navigation:
+  coordinate_system: "ECEF" # Options: ECEF, ENU, LLH
+  use_barometer: false
+  zero_velocity_update_enabled: true
+
+imu:
+  accel_noise_density: 0.05 # m/s^2/sqrt(Hz)
+  gyro_noise_density: 0.005 # rad/s/sqrt(Hz)
+  accel_bias_random_walk: 0.001 # m/s^3/sqrt(Hz)
+  gyro_bias_random_walk: 0.0001 # rad/s^2/sqrt(Hz)
+
+gnss:
+  fix_frequency_hz: 1
+  outage_threshold_sec: 5.0
+  horizontal_accuracy_m: 2.5
+  vertical_accuracy_m: 5.0
+
+outage_detection:
+  max_timestamp_gap_sec: 2.0
+  degraded_horizontal_accuracy_m: 5.0
+  outage_horizontal_accuracy_m: 15.0
+  degraded_hdop: 2.5
+  outage_hdop: 5.0
+  degraded_cn0_dbhz: 35.0
+  outage_cn0_dbhz: 25.0
+  persistence_count: 2
+
+ekf:
+  initial_covariance:
+    position_std: 1.0 # meters
+    velocity_std: 0.1 # m/s
+    attitude_std: 0.01 # radians (~0.57 deg)
+    accel_bias_std: 0.05 # m/s^2
+    gyro_bias_std: 0.005 # rad/s
+  process_noise:
+    accel_noise_std: 0.05 # m/s^2
+    gyro_noise_std: 0.005 # rad/s
+    accel_bias_rw_std: 0.0001 # m/s^2/s
+    gyro_bias_rw_std: 0.00001 # rad/s/s
+  gnss_noise:
+    position_std_default: 2.5 # meters
+  numerical:
+    symmetry_enforcement: true
+    min_covariance: 1e-12
+  ai_pseudo_measurement:
+    position_std_east: 1.5 # meters
+    position_std_north: 1.5 # meters
+    position_std_up: 3.0 # meters
+    mahalanobis_gate_threshold: 4.0 # Mahalanobis distance gate threshold
+    enabled_statuses:
+      - "OUTAGE"
+
+machine_learning:
+  model_type: "tcn"
+  in_channels: 8
+  output_dim: 3
+  num_channels: [32, 64, 128]
+  kernel_size: 3
+  dropout: 0.1
+  epochs: 50
+  batch_size: 32
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  early_stopping_patience: 10
+  seed: 42
+
+ml_dataset:
+  window_size_samples: 100 # 1.0s at 100Hz
+  stride_samples: 50 # 0.5s stride
+  feature_columns:
+    - "accel_x"
+    - "accel_y"
+    - "accel_z"
+    - "gyro_x"
+    - "gyro_y"
+    - "gyro_z"
+    - "accel_norm"
+    - "gyro_norm"
+  target_types:
+    - "displacement_enu"
+    - "velocity_end"
+
+map_matching:
+  search_radius_m: 50.0
+  max_heading_error_deg: 60.0
+  min_confidence_threshold: 0.25
+  sigma_dist_m: 10.0
+  sigma_heading_deg: 25.0
+  sigma_transition_m: 15.0
+  weights:
+    distance: 0.40
+    heading: 0.35
+    transition: 0.15
+    motion: 0.10
+  pseudo_measurement:
+    position_std_east: 2.0 # meters base
+    position_std_north: 2.0 # meters base
+    position_std_up: 5.0 # meters base
+    mahalanobis_gate_threshold: 4.0
+    enabled_statuses:
+      - "OUTAGE"
+
+nhc:
+  enabled: true
+  sigma_y: 0.1 # lateral velocity standard deviation in body frame (m/s)
+  sigma_z: 0.1 # vertical velocity standard deviation in body frame (m/s)
+  mahalanobis_gate_threshold: 4.0 # Mahalanobis distance rejection threshold
+  min_velocity_mps: 0.5 # minimum forward speed to apply NHC (optional threshold)
+
+zupt:
+  enabled: true
+  accel_norm_tol: 0.6 # tolerance around gravity |norm(a) - g| (m/s^2)
+  gyro_norm_threshold: 0.08 # maximum angular rate magnitude (rad/s)
+  accel_var_threshold: 0.05 # maximum sliding window accel norm variance (m^2/s^4)
+  gyro_var_threshold: 0.005 # maximum sliding window gyro norm variance (rad^2/s^2)
+  persistence_samples: 30 # continuous samples required to declare stationary (~0.3s at 100Hz)
+  window_size_samples: 15 # sliding window size for variance calculation
+  sigma_zupt: 0.01 # zero-velocity measurement noise std dev per ENU axis (m/s)
+  mahalanobis_gate_threshold: 4.0 # Mahalanobis distance rejection threshold
+
+evaluation:
+  metrics:
+    - "rmse"
+    - "max_error"
+    - "cumulative_drift"
+  save_plots: true
+  results_dir: "results"
+
+
