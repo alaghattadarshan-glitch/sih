@@ -1,0 +1,62 @@
+{
+  "ai_disabled": {
+    "label": "AI Disabled (Reference)",
+    "outage_rmse": 243.1384347819597,
+    "err_60s": 437.26906118774735,
+    "max_err": 1046.9795940434144,
+    "accepted": 0,
+    "rejected": 0,
+    "acceptance_rate": 0.0,
+    "max_mahalanobis": 0.0
+  },
+  "normal": {
+    "label": "Normal AI (TCN Model)",
+    "outage_rmse": 169.34172384740927,
+    "err_60s": 197.50206418427592,
+    "max_err": 258.9664392386505,
+    "accepted": 80,
+    "rejected": 0,
+    "acceptance_rate": 100.0,
+    "max_mahalanobis": 2.78455744513806
+  },
+  "small_bias": {
+    "label": "Small Bias (+1m E/N)",
+    "outage_rmse": 124.53990838614538,
+    "err_60s": 151.6934687006336,
+    "max_err": 217.9810241237944,
+    "accepted": 80,
+    "rejected": 0,
+    "acceptance_rate": 100.0,
+    "max_mahalanobis": 3.3695393794561905
+  },
+  "moderate_bias": {
+    "label": "Moderate Bias (+5m E/N)",
+    "outage_rmse": 195.15214970618456,
+    "err_60s": 297.3989822479879,
+    "max_err": 440.87546422168754,
+    "accepted": 77,
+    "rejected": 3,
+    "acceptance_rate": 96.25,
+    "max_mahalanobis": 6.196437979155981
+  },
+  "large_outlier": {
+    "label": "Large Outlier (+50m Peak)",
+    "outage_rmse": 174.2668364462189,
+    "err_60s": 200.92462655874164,
+    "max_err": 262.2158708850742,
+    "accepted": 70,
+    "rejected": 10,
+    "acceptance_rate": 87.5,
+    "max_mahalanobis": 34.58983599740536
+  },
+  "random_outliers": {
+    "label": "Random Outliers (15% Corrupted)",
+    "outage_rmse": 176.0637178960938,
+    "err_60s": 197.5428470883984,
+    "max_err": 257.71501476982627,
+    "accepted": 66,
+    "rejected": 14,
+    "acceptance_rate": 82.5,
+    "max_mahalanobis": 35.42082173124888
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "Scenario A (Open-Loop INS)": {
+    "outage_rmse_m": 243.03778420459267,
+    "error_at_45s_m": 206.1015019053453,
+    "error_at_60s_m": 437.16863303556806,
+    "max_outage_error_m": 437.16863303556806,
+    "final_error_m": 1046.8923769499515,
+    "avg_road_distance_m": 217.96313547474753,
+    "max_road_distance_m": 437.16863303556806
+  },
+  "Scenario B (ESKF only)": {
+    "outage_rmse_m": 243.13843478179277,
+    "error_at_45s_m": 206.2202747681586,
+    "error_at_60s_m": 437.26906118756676,
+    "max_outage_error_m": 437.26906118756676,
+    "final_error_m": 1046.9795940432405,
+    "avg_road_distance_m": 138.44613613181434,
+    "max_road_distance_m": 330.45613721816756
+  },
+  "Scenario C (ESKF + AI)": {
+    "outage_rmse_m": 169.34172384736752,
+    "error_at_45s_m": 176.71361482017207,
+    "error_at_60s_m": 197.5020641842759,
+    "max_outage_error_m": 197.5863668771894,
+    "final_error_m": 253.54956659729356,
+    "avg_road_distance_m": 33.98431356054398,
+    "max_road_distance_m": 64.91708825500687
+  },
+  "Scenario D (ESKF + AI + Map)": {
+    "outage_rmse_m": 168.84786990770456,
+    "error_at_45s_m": 174.11197802446267,
+    "error_at_60s_m": 202.6696667182728,
+    "max_outage_error_m": 202.78028642142917,
+    "final_error_m": 264.1739941099289,
+    "avg_road_distance_m": 20.20780354239576,
+    "max_road_distance_m": 38.3732994609416
+  }
+}

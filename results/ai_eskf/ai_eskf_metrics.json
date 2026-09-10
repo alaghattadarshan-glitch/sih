@@ -1,0 +1,32 @@
+{
+  "Scenario A (Open-Loop INS)": {
+    "err_start_30s": 61.55384749296724,
+    "err_mid_45s": 206.1015019055343,
+    "err_end_60s": 437.16863303574854,
+    "err_rec_62s": 480.53831266150684,
+    "outage_rmse": 243.03778420475942,
+    "overall_rmse": 393.9978678152478,
+    "final_error": 1046.8923769501255
+  },
+  "Scenario C (ESKF Outage - AI Off)": {
+    "err_start_30s": 61.68478337737996,
+    "err_mid_45s": 206.22027476834776,
+    "err_end_60s": 437.26906118774735,
+    "err_rec_62s": 480.63721213426567,
+    "outage_rmse": 243.1384347819597,
+    "overall_rmse": 394.06479812230754,
+    "final_error": 1046.9795940434144
+  },
+  "Scenario D (ESKF Outage - AI On)": {
+    "err_start_30s": 117.6549945237905,
+    "err_mid_45s": 176.7136148202268,
+    "err_end_60s": 197.50206418427592,
+    "err_rec_62s": 204.0441004264597,
+    "outage_rmse": 169.34172384740927,
+    "overall_rmse": 160.4453478383572,
+    "final_error": 253.5495665972544,
+    "ai_accepted_count": 80,
+    "ai_rejected_count": 0,
+    "acceptance_rate_pct": 100.0
+  }
+}
